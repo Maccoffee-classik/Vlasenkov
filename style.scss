@@ -1,0 +1,111 @@
+
+$color-white:  #fff;
+$color-orange:#ff7346;
+$font-unbounded: "Unbounded", sans-serif;
+$font-manrope: "Manrope", sans-serif;
+$font-onest: 'Onest', sans-serif;
+$font-noticia-text: 'Noticia Text', sans-serif;
+$font-unbounded-light: 300;
+$font-unbounded-regular: 400;
+$font-unbounded-medium: 500;
+$font-unbounded-black: 900;
+
+
+$font-manrope-regular: 400;
+$font-manrope-medium: 500;
+$font-manrope-semibold: 600;
+
+$font-onest-semibold: 600;
+
+$font-noticia-text-bold: 700;
+
+
+body {
+  font-family: 'Manrope', sans-serif;
+  margin: 0;
+}
+
+
+.hero {
+
+  background: url("img/hero_bg.png") no-repeat top center;
+
+  background-size: cover;
+  background-position: center center;
+
+  color: $color-white;
+  @media (max-width: 576px) {
+    background: url("img/hero_bg-mob.png") no-repeat top center;
+    background-size: cover;
+
+  }
+}
+
+
+.header {
+  padding: 1rem 0;
+}
+.header__logo  {
+  font-family: $font-unbounded;
+  font-weight: $font-unbounded-black;
+  font-size: 20px;
+  color: $color-white;
+  text-transform: uppercase;
+  b {
+    color: $color-orange;
+
+  }
+}
+.header__contacts {
+
+}
+.header__contact-phone,
+.header__contact-email {
+  color: #ffffffcc;
+  margin-bottom: 0.5rem;
+}
+.header__contact-email {
+  @media (min-width: 992px) {
+    margin-left: 1rem;
+    margin-bottom: 0;
+  }
+}
+.header__contact-phone:hover,
+.header__contact-email:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.header__cta {
+
+  font-weight: 600;
+  @media (min-width: 992px) {
+    margin-left: 1.5rem;
+  }
+}
+
+
+.main {
+  padding: 4rem 0 3rem;
+  text-align: center;
+  @media (min-width: 992px) {
+    text-align: left;
+  }
+}
+.main__title {
+  font-weight: 700;
+}
+.main__subtitle {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+.main__cta {
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+
+}
+.main__image {
+  max-width: 100%;
+  height: auto;
+
+}

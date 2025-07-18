@@ -1,0 +1,92 @@
+body {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+}
+
+.hero {
+  background: url("img/hero_bg.png") no-repeat top center;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+}
+@media (max-width: 576px) {
+  .hero {
+    background: url("img/hero_bg-mob.png") no-repeat top center;
+    background-size: cover;
+  }
+}
+
+.header {
+  padding: 1rem 0;
+}
+
+.header__logo {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.header__logo b {
+  color: #ff7346;
+}
+
+.header__contact-phone,
+.header__contact-email {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 992px) {
+  .header__contact-email {
+    margin-left: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+.header__contact-phone:hover,
+.header__contact-email:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header__cta {
+  font-weight: 600;
+}
+@media (min-width: 992px) {
+  .header__cta {
+    margin-left: 1.5rem;
+  }
+}
+
+.main {
+  padding: 4rem 0 3rem;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .main {
+    text-align: left;
+  }
+}
+
+.main__title {
+  font-weight: 700;
+}
+
+.main__subtitle {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.main__cta {
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+}
+
+.main__image {
+  max-width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=style.css.map */
