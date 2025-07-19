@@ -664,7 +664,7 @@ body {
   left: 0;
   width: 30px;
   height: 30px;
-  background: url("/img/services-check-1.svg") no-repeat center center;
+  background: url("img/services-check-1.svg") no-repeat center center;
   background-size: contain;
 }
 .services__card-button {
@@ -710,7 +710,7 @@ body {
   left: 0;
   width: 30px;
   height: 30px;
-  background: url("/img/services-check-2.svg") no-repeat center center;
+  background: url("img/services-check-2.svg") no-repeat center center;
   background-size: contain;
 }
 .services__card--highlighted .services__card-button {
