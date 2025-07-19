@@ -1,6 +1,8 @@
 
 $color-white:  #fff;
+$color-black-purple:  #42365a;
 $color-orange:#ff7346;
+$color-black: #000;
 $font-unbounded: "Unbounded", sans-serif;
 $font-manrope: "Manrope", sans-serif;
 $font-onest: 'Onest', sans-serif;
@@ -19,6 +21,14 @@ $font-onest-semibold: 600;
 
 $font-noticia-text-bold: 700;
 
+/*GLOBAL*/
+.g-6, .gy-6 {
+  --bs-gutter-y: 4rem;
+}
+
+.g-6, .gx-6 {
+  --bs-gutter-x: 4rem;
+}
 
 body {
   font-family: 'Manrope', sans-serif;
@@ -43,7 +53,7 @@ body {
 
 
 .header {
-  padding: 1rem 0;
+  padding: 1.4rem 0;
   .navbar-nav {
     position: relative;
     padding-left: 32px;
@@ -188,7 +198,7 @@ body {
 
 
 .main {
-  padding: 150px 0 180px;
+  padding: 125px 0 267px;
   text-align: center;
   @media (min-width: 992px) {
     text-align: left;
@@ -202,7 +212,7 @@ body {
   font-family: $font-unbounded;
   font-weight: $font-unbounded-medium;
   margin-bottom: 50px;
-  @media (min-width: 992px) {
+  @media (max-width: 992px) {
     margin-bottom: 30px;
   }
 }
@@ -213,7 +223,7 @@ body {
   margin-bottom: 82px;
   font-size: 24px;
   line-height: 120%;
-  @media (min-width: 992px) {
+  @media (max-width: 992px) {
     margin-bottom: 60px;
   }
 }
@@ -253,14 +263,174 @@ body {
       stroke: #817697;
     }
   }
-
-}
-.main__cta {
-
-
 }
 .main__image {
   max-width: 400px;
   height: auto;
+}
 
+/*ABOUT*/
+
+.about {
+  font-family: $font-unbounded;
+  color: $color-black-purple;
+  margin-top: -80px;
+  position: relative;
+  padding: 0px 0 100px 0;
+  background: transparent;
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+  &__intro {
+    position: relative;
+    background: #fff;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding: 97px 60px 67px 0;
+    z-index: 1;
+    // ключевой псевдоэлемент для растяжки влево
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -100vw;
+      width: 100vw;
+      background: #fff;
+      z-index: -1;
+    }
+  }
+
+  &__title {
+    font-weight: $font-unbounded-medium;
+    margin-bottom: 24px;
+    font-size: 36px;
+    line-height: 120%;
+  }
+  &__text {
+    font-family: $font-manrope;
+    font-weight: $font-manrope-regular;
+    font-size: 22px;
+    line-height: 120%;
+    color: $color-black;
+    margin-bottom:30px;
+  }
+
+  &__stats {
+    --bs-gutter-x: 20px;
+  }
+
+  &__card {
+    background:  #f3edff;
+    border-radius: 40px;
+    padding: 43px 40px;
+    text-align: left;
+  }
+
+  &__card-value {
+    font-size: 50px;
+    font-weight: $font-unbounded-medium;
+    margin-bottom: 15px;
+    line-height: 100%;
+  }
+
+  &__card-label {
+    font-family: $font-manrope;
+    font-weight: $font-manrope-regular;
+    color: $color-black;
+    font-size: 22px;
+    line-height: 120%;
+  }
+}
+
+/*BENEFITS*/
+.benefits {
+  font-family: $font-unbounded;
+  font-weight: $font-unbounded-medium ;
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+  background: url("img/benefits_bg.png") no-repeat center center;
+  background-size: cover;
+
+/*
+  &__background {
+    position: absolute;
+    inset: 0;
+    filter: blur(100px);
+    background: radial-gradient(163.86% 91.87% at 100% 100%, #beb2df 16.42%, #ff7346 35%, #ff7346 54.58%, #beb2df 73.08%, #42365a 100%);
+    z-index: 1;
+  }
+*/
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__card {
+    background: #fff;
+
+    border-top-right-radius: 48px;
+    border-bottom-right-radius: 48px;
+    padding: 95px 138px 164px 0;
+
+
+    margin-left: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -96vw;
+      width: 100vw;
+      background: $color-white;
+      z-index: -1;
+    }
+  }
+
+  &__title {
+    font-weight: $font-unbounded-medium ;
+    color: $color-black-purple;
+    margin-bottom: 103px;
+    font-size: 36px;
+    line-height: 120%;
+
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__icon {
+    border-radius: 40px;
+    width: 119px;
+    height: 119px;
+    margin-bottom: 32px;
+    text-align: center;
+    padding: 21px;
+    background: radial-gradient(87.86% 120.87% at 100% 97%, #beb2df 18.42%, #ff7346 44%, #ff7346 46.58%, #beb2df 65.08%, #42365a 86%);
+    img {
+      width: 77px;
+      vert-align: middle;
+    }
+  }
+
+  &__item-title {
+    font-weight: $font-unbounded-medium ;
+    font-size: 24px;
+    line-height: 120%;
+    color: $color-black-purple;
+  }
+
+  &__item-text {
+    font-family: $font-manrope;
+    font-weight: $font-manrope-regular;
+    color: $color-black;
+    font-size: 20px;
+    line-height: 120%;
+  }
 }
