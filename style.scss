@@ -44,6 +44,71 @@ body {
 
 .header {
   padding: 1rem 0;
+  .navbar-nav {
+    position: relative;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-right: 32px;
+    margin-left: 32px;
+    gap: 30px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 18px;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.3);
+
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      right:  0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 18px;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.3);
+
+    }
+  }
+
+
+  .nav-item .nav-link {
+    font-family: $font-manrope;
+    font-weight: $font-manrope-semibold;
+    text-transform: uppercase;
+    color:$color-white;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    padding: 0;
+    &:hover {
+      color: $color-orange;
+    }
+    &:active {
+      color: $color-orange;
+    }
+
+  }
+
+
+  .header__menu-item:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 12px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+
+
+
+
 }
 .header__logo  {
   font-family: $font-unbounded;
@@ -51,18 +116,26 @@ body {
   font-size: 20px;
   color: $color-white;
   text-transform: uppercase;
+  margin: 0;
   b {
     color: $color-orange;
 
   }
 }
 .header__contacts {
+  gap: 32px;
 
 }
 .header__contact-phone,
 .header__contact-email {
-  color: #ffffffcc;
-  margin-bottom: 0.5rem;
+  font-family: $font-manrope;
+  font-weight: $font-manrope-semibold;
+  color: $color-white;
+  font-size: 14px;
+  svg {
+    margin-right: 6px;
+  }
+
 }
 .header__contact-email {
   @media (min-width: 992px) {
@@ -74,38 +147,120 @@ body {
 .header__contact-email:hover {
   color: #fff;
   text-decoration: none;
-}
-.header__cta {
-
-  font-weight: 600;
-  @media (min-width: 992px) {
-    margin-left: 1.5rem;
+  &:hover {
+    color: $color-orange;
+    svg path {
+      stroke: $color-orange;
+    }
+  }
+  &:active {
+    color: $color-orange;
+    svg path {
+      stroke: $color-orange;
+    }
   }
 }
+.header__cta {
+  font-family: $font-manrope;
+  font-weight: $font-manrope-semibold;
+  color: $color-white;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 0;
+  svg {
+    margin-right: 6px;
+  }
+  &:hover {
+    color: $color-orange;
+    svg path {
+      stroke: $color-orange;
+    }
+  }
+  &:active {
+    color: $color-orange;
+    svg path {
+      stroke: $color-orange;
+    }
+  }
+
+}
+
 
 
 .main {
-  padding: 4rem 0 3rem;
+  padding: 150px 0 180px;
   text-align: center;
   @media (min-width: 992px) {
     text-align: left;
   }
 }
 .main__title {
-  font-weight: 700;
+
+  font-size: 44px;
+  line-height: 100%;
+  color:$color-white;
+  font-family: $font-unbounded;
+  font-weight: $font-unbounded-medium;
+  margin-bottom: 50px;
+  @media (min-width: 992px) {
+    margin-bottom: 30px;
+  }
 }
 .main__subtitle {
-  font-weight: 400;
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
+  color:$color-white;
+  font-family: $font-unbounded;
+  font-weight: $font-unbounded-regular;
+  margin-bottom: 82px;
+  font-size: 24px;
+  line-height: 120%;
+  @media (min-width: 992px) {
+    margin-bottom: 60px;
+  }
+}
+.btn-orange {
+  font-family: $font-manrope;
+  font-weight: $font-manrope-semibold;
+  cursor: pointer;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  color:$color-white;
+  background: $color-orange;
+  padding: 17px 26.5px;
+  text-transform: uppercase;
+  border: 1px solid #ff9b7b;
+  border-radius: 12px;
+  box-shadow: 0 12px 12px 0 rgba(255, 115, 70, 0.3);
+  svg {
+    margin-right: 8px;
+  }
+  &:hover {
+    border: 1px solid #bdb2d3;
+    background: radial-gradient(163.86% 91.87% at 100% 100%, #beb2df 16.42%, #ff7346 35%, #ff7346 54.58%, #beb2df 73.08%, #9788b5 100%);;
+    box-shadow: 0 12px 12px 0 rgba(151, 136, 181, 0.3);
+  }
+  &:active {
+    border: 1px solid #bdb2d3;
+    box-shadow: 0 12px 12px 0 rgba(151, 136, 181, 0.3);
+    background: radial-gradient(254.86% 131.2% at 100% 100%, #beb2df 37.02%, #ff7346 85.58%, #beb2df 100%);
+  }
+  &:disabled {
+    border: 1px solid #817697;
+    box-shadow: 0 12px 12px 0 rgba(151, 136, 181, 0.3);
+    background: #6c5e88;
+    cursor: not-allowed;
+    color: #817697;
+    svg path {
+      stroke: #817697;
+    }
+  }
+
 }
 .main__cta {
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
+
 
 }
 .main__image {
-  max-width: 100%;
+  max-width: 400px;
   height: auto;
 
 }
