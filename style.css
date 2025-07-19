@@ -664,10 +664,8 @@ body {
   left: 0;
   width: 30px;
   height: 30px;
-  background-image: url("/img/services-check-1.svg");
+  background: url("/img/services-check-1.svg") no-repeat center center;
   background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 .services__card-button {
   font-family: "Manrope", sans-serif;
@@ -712,10 +710,8 @@ body {
   left: 0;
   width: 30px;
   height: 30px;
-  background-image: url("/img/services-check-2.svg");
+  background: url("/img/services-check-2.svg") no-repeat center center;
   background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 .services__card--highlighted .services__card-button {
   margin-top: auto;
