@@ -317,7 +317,7 @@ body {
   font-family: "Unbounded", sans-serif;
   font-weight: 500;
   position: relative;
-  padding: 100px 0;
+  padding: 100px 0 232px;
   overflow: hidden;
   background: url("img/benefits_bg.png") no-repeat center center;
   background-size: cover;
@@ -389,6 +389,99 @@ body {
   color: #000;
   font-size: 20px;
   line-height: 120%;
+}
+
+/*SITES*/
+.sites {
+  font-family: "Unbounded", sans-serif;
+  padding: 0;
+}
+.sites__title {
+  font-weight: 500;
+  color: #42365a;
+  margin-bottom: 10px;
+  font-size: 44px;
+  line-height: 100%;
+  margin-bottom: 30px;
+}
+.sites__subtitle {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: #000;
+  font-size: 24px;
+  line-height: 100%;
+  margin-bottom: 83px;
+}
+.sites__card {
+  background: #f3edff;
+  border-radius: 40px;
+  padding: 20px 20px 20px 20px;
+  text-align: left;
+  height: 100%;
+  min-height: 363px;
+  /*transition: all 0.3s ease;*/
+  /*
+      &:hover {
+        transform: translateY(-5px);
+      }*/
+}
+.sites__icon {
+  width: 55%;
+  border-radius: 30px;
+  background: #fff;
+  height: auto;
+  margin-bottom: 20px;
+  padding: 30px 0;
+  text-align: center;
+}
+.sites__icon img {
+  width: 110px;
+  height: 110px;
+}
+.sites__card-title {
+  font-weight: 500;
+  color: #42365a;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 100%;
+}
+.sites__card-text {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: #000;
+}
+.sites__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("img/sites_cta_bg.png") no-repeat top center;
+  background-size: cover;
+  border-radius: 40px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  height: 100%;
+  padding: 30px;
+  text-decoration: none;
+}
+.sites__cta img {
+  width: 110px;
+  height: 110px;
+  margin-bottom: 15px;
+}
+.sites__cta span {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 120%;
+  text-align: center;
+  color: #fff;
+}
+.sites__cta:hover {
+  filter: brightness(1.2);
 }
 
 /*# sourceMappingURL=style.css.map */

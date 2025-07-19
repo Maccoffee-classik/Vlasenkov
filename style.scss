@@ -322,7 +322,7 @@ body {
   }
 
   &__card {
-    background:  #f3edff;
+    background:   #f3edff;
     border-radius: 40px;
     padding: 43px 40px;
     text-align: left;
@@ -349,7 +349,7 @@ body {
   font-family: $font-unbounded;
   font-weight: $font-unbounded-medium ;
   position: relative;
-  padding: 100px 0;
+  padding: 100px 0 232px;
   overflow: hidden;
   background: url("img/benefits_bg.png") no-repeat center center;
   background-size: cover;
@@ -432,5 +432,101 @@ body {
     color: $color-black;
     font-size: 20px;
     line-height: 120%;
+  }
+}
+/*SITES*/
+.sites {
+  font-family: $font-unbounded;
+  padding: 0;
+
+  &__title {
+    font-weight:$font-unbounded-medium;
+    color:$color-black-purple;
+    margin-bottom: 10px;
+    font-size: 44px;
+    line-height: 100%;
+    margin-bottom: 30px;
+  }
+  &__subtitle {
+    font-family: $font-manrope;
+    font-weight:$font-manrope-regular;
+    color: $color-black;
+    font-size: 24px;
+    line-height: 100%;
+    margin-bottom: 83px;
+  }
+  &__card {
+    background: #f3edff;
+    border-radius: 40px;
+    padding: 20px 20px 20px 20px;
+    text-align: left;
+    height: 100%;
+    min-height: 363px;
+    /*transition: all 0.3s ease;*/
+/*
+    &:hover {
+      transform: translateY(-5px);
+    }*/
+  }
+  &__icon {
+    width: 55%;
+    border-radius: 30px;
+    background: $color-white;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 30px 0;
+    text-align: center;
+    img {
+      width: 110px;
+      height: 110px;
+    }
+  }
+  &__card-title {
+    font-weight:$font-unbounded-medium;
+    color: $color-black-purple;
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100%;
+  }
+  &__card-text {
+    font-family: $font-manrope;
+    font-weight:$font-manrope-regular;
+    font-size: 20px;
+    line-height: 120%;
+    color: $color-black;
+  }
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url("img/sites_cta_bg.png") no-repeat top center;
+    background-size: cover;
+    border-radius: 40px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    height: 100%;
+    padding: 30px;
+    text-decoration: none;
+    img {
+      width: 110px;
+      height: 110px;
+      margin-bottom: 15px;
+    }
+    span {
+      font-weight: $font-unbounded-medium;
+      font-size: 36px;
+      line-height: 120%;
+      text-align: center;
+      color: $color-white;
+
+    }
+    &:hover {
+      filter: brightness(1.2);
+    }
+
+
   }
 }
