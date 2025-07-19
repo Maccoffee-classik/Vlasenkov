@@ -29,6 +29,9 @@ $font-noticia-text-bold: 700;
 .g-6, .gx-6 {
   --bs-gutter-x: 4rem;
 }
+.g-8, .gx-8 {
+  --bs-gutter-x: 8rem;
+}
 
 body {
   font-family: 'Manrope', sans-serif;
@@ -437,7 +440,8 @@ body {
 /*SITES*/
 .sites {
   font-family: $font-unbounded;
-  padding: 0;
+
+  padding-bottom: 100px;
 
   &__title {
     font-weight:$font-unbounded-medium;
@@ -528,5 +532,271 @@ body {
     }
 
 
+  }
+}
+/*workflow*/
+.workflow {
+  font-family: $font-unbounded;
+
+  padding: 100px 0;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    right: -50px;
+    bottom: 0;
+    background: #f3edff;
+    filter: blur(100px);
+    z-index: -1;
+  }
+
+  &__card {
+    background:$color-white;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 48px;
+    padding: 85px 0 99px 85px;
+    height: 100%;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -100vw;
+      width: 100vw;
+      background: #fff;
+      z-index: 0;
+    }
+  }
+
+  &__title {
+    font-weight:$font-unbounded-medium;
+    color:$color-black-purple;
+    margin-bottom: 39px;
+    font-size: 44px;
+    line-height: 100%;
+
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 40px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    max-width: 775px;
+    min-height: 181px;
+    background: #f3edff;
+    border-radius: 40px;
+    padding: 40px 20px;
+    &:nth-child(2),
+    &:nth-child(4) {
+      margin-left: auto;
+    }
+    &:nth-child(1),
+    &:nth-child(3) {
+      margin-right: auto;
+    }
+  }
+  &__step {
+    flex-shrink: 0;
+    border-radius: 1000px;
+    width: 100px;
+    height: 100px;
+    background:radial-gradient(80.86% 120.87% at 100% 85%, #beb2df -31.58%, #ff7346 41%, #ff7346 38.58%, #beb2df 57.08%, #42365a 76%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 32px;
+  }
+  &__step-number {
+    font-weight:$font-unbounded-medium;
+    color: $color-white;
+    font-size: 44px;
+    line-height: 120%;
+    text-align: center;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__item-title {
+    font-weight:$font-unbounded-medium;
+    color:$color-black-purple;
+    margin-bottom: 8px;
+    font-size: 30px;
+    line-height: 120%;
+  }
+
+  &__item-text {
+    font-family: $font-manrope;
+    font-weight: $font-manrope-regular;
+    margin: 0;
+    font-size: 20px;
+    line-height: 120%;
+    color: $color-black;
+  }
+}
+/*SERVICES*/
+
+.services {
+  font-family: $font-unbounded;
+  padding: 100px 0;
+  background: $color-white;
+
+  &__title {
+    font-weight:$font-unbounded-medium;
+    color:$color-black-purple;
+    margin-bottom: 100px;
+    font-size: 44px;
+    line-height: 100%;
+  }
+
+  &__card {
+    background: #f1eaff;
+    border-radius: 24px;
+    padding: 40px 10px 40px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    height: 100%;
+    max-width: 534px;
+    &-title {
+      font-weight:$font-unbounded-medium;
+      margin-bottom: 30px;
+      font-size: 30px;
+      line-height: 100%;
+      color: $color-black-purple;
+    }
+
+    &-price {
+      font-weight:$font-unbounded-light;
+      margin-bottom: 30px;
+      font-size: 30px;
+      line-height: 120%;
+      color: $color-black-purple;
+    }
+
+    &-image {
+      width: 70%;
+      border-radius: 30px;
+      background: $color-white;
+      height: auto;
+      margin-bottom: 20px;
+      padding: 30px 0;
+      text-align: center;
+      img {
+        width: 110px;
+        height: 110px;
+      }
+    }
+
+    &-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 24px;
+
+      li {
+        font-family: $font-manrope;
+        font-weight: $font-manrope-regular;
+        font-size: 22px;
+        line-height: 120%;
+        position: relative;
+        margin-bottom: 24px;
+        color: $color-black;
+        padding-left: 42px;
+        align-items: center;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 30px;
+          height: 30px;
+          background-image: url('/img/services-check-1.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+
+        }
+      }
+    }
+
+    &-button {
+      font-family: $font-manrope;
+      font-weight: $font-manrope-semibold;
+      background: radial-gradient(91.86% 104.87% at 108% 100%, #beb2df 28.42%, #ff7346 47%, #ff7346 64.58%, #beb2df 81.08%, #42365a 99%);
+      border: none;
+      border-radius: 12px;
+      line-height: 1;
+      color: $color-white;
+      padding: 20px 50px;
+      text-transform: uppercase;
+      cursor: pointer;
+      align-self: flex-start;
+      margin-top: auto;
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+    }
+
+    &--highlighted {
+      background: radial-gradient(69.86% 112.87% at 100% 77%, #beb2df 20.42%, #ff7346 31%, #ff7346 50.58%, #beb2df 66.08%, #42365a 79%);
+      color: #fff;
+
+      .services__card-title,
+      .services__card-price
+       {
+
+        color: $color-white;
+      }
+      .services__card-list li {
+
+        font-family: $font-manrope;
+        font-weight: $font-manrope-regular;
+        font-size: 22px;
+        line-height: 120%;
+        position: relative;
+        margin-bottom: 24px;
+        color: $color-white;
+        padding-left: 42px;
+        align-items: center;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 30px;
+          height: 30px;
+          background-image: url('/img/services-check-2.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+
+        }
+
+      }
+
+      .services__card-button {
+        margin-top: auto;
+        background: #fff;
+        color: $color-black-purple;
+      }
+
+
+    }
   }
 }
