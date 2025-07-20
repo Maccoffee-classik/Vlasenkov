@@ -8,8 +8,19 @@
   --bs-gutter-x: 4rem;
 }
 
+.g-8, .gy-8 {
+  --bs-gutter-y: 8rem;
+}
+
 .g-8, .gx-8 {
   --bs-gutter-x: 8rem;
+}
+
+@media (min-width: 992px) {
+  .col-lg-20 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
 }
 
 body {
@@ -94,8 +105,10 @@ body {
   color: #fff;
   text-transform: uppercase;
   margin: 0;
+  text-decoration: underline;
+  text-decoration-color: #ff7346;
 }
-.header__logo b {
+.header__logo span {
   color: #ff7346;
 }
 
@@ -598,6 +611,8 @@ body {
   background: #fff;
 }
 .services__title {
+  position: relative;
+  z-index: 2;
   font-weight: 500;
   color: #42365a;
   margin-bottom: 100px;
@@ -920,6 +935,261 @@ body {
 .cta-project__btn:hover {
   background: #fff;
   color: #42365a;
+}
+
+/*BRANDS*/
+.brands__title {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 120%;
+  color: #42365a;
+  text-align: left;
+  margin-bottom: 100px;
+}
+/*WHY-US*/
+.why-us {
+  padding: 80px 0;
+}
+.why-us__title {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 500;
+  margin-bottom: 40px;
+  font-size: 44px;
+  line-height: 120%;
+  color: #42365a;
+}
+@media (max-width: 992px) {
+  .why-us__title {
+    font-size: 33px;
+    margin-bottom: 24px;
+  }
+}
+.why-us__text p {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  margin-bottom: 30px;
+  font-size: 22px;
+  line-height: 120%;
+  color: #000;
+}
+@media (max-width: 992px) {
+  .why-us__text p {
+    font-size: 18px;
+    margin-bottom: 28px;
+  }
+}
+.why-us__text p:last-child {
+  margin-bottom: 0;
+}
+
+.footer {
+  font-family: "Unbounded", sans-serif;
+  background-color: #42365a;
+  color: #fff;
+  padding: 86px 0 42px;
+  border-radius: 40px 40px 0 0;
+}
+@media (max-width: 577px) {
+  .footer {
+    padding: 44px 0px 100px;
+    border-radius: 0;
+  }
+}
+.footer__logo {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 120%;
+  text-decoration: none;
+}
+.footer__logo-white {
+  position: relative;
+  display: inline-block;
+}
+.footer__logo-white::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+}
+.footer__logo-accent {
+  position: relative;
+  color: #ff7346;
+}
+.footer__logo-accent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 1px;
+  background-color: #ff7346;
+}
+.footer .row > div:nth-child(2),
+.footer .row > div:nth-child(3) {
+  padding-left: 80px;
+  padding-right: 0;
+}
+@media (max-width: 1201px) {
+  .footer .row > div:nth-child(2),
+  .footer .row > div:nth-child(3) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (max-width: 577px) {
+  .footer .row > div:nth-child(2),
+  .footer .row > div:nth-child(3) {
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+  }
+}
+.footer__heading {
+  font-weight: 400;
+  margin-bottom: 38px;
+  font-size: 24px;
+  line-height: 100%;
+  color: #9788b5;
+}
+@media (max-width: 577px) {
+  .footer__border-mob {
+    border-top: 1px solid #574973;
+    padding-top: 1.5rem;
+  }
+}
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 577px) {
+  .footer__list {
+    border-bottom: 1px solid #574973;
+  }
+}
+.footer__link {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 26px;
+  font-size: 18px;
+  line-height: 100%;
+}
+.footer__link:hover {
+  color: #ff7346;
+}
+.footer__contacts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer__contacts .footer__contact {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-bottom: 10px;
+}
+@media (max-width: 577px) {
+  .footer__contacts .footer__contact {
+    justify-content: start;
+  }
+}
+.footer__contacts .footer__icon {
+  font-size: 18px;
+}
+.footer__contacts .footer__contact-tel {
+  margin-right: 20px;
+  color: #9788b5;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  text-align: right;
+}
+@media (max-width: 577px) {
+  .footer__contacts .footer__contact-tel {
+    order: 2;
+    margin-right: 0px;
+    margin-left: 20px;
+  }
+}
+.footer__contacts .footer__contact-tel:hover {
+  background: radial-gradient(163.86% 91.87% at 100% 100%, rgb(190, 178, 223) 16.4%, rgb(255, 115, 70) 35%, rgb(255, 115, 70) 54.6%, rgb(190, 178, 223) 73.1%, rgb(151, 136, 181) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.footer__contacts .footer__contact-link {
+  margin-right: 20px;
+  color: #9788b5;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: right;
+}
+@media (max-width: 577px) {
+  .footer__contacts .footer__contact-link {
+    order: 2;
+    margin-right: 0px;
+    margin-left: 20px;
+  }
+}
+.footer__contacts .footer__contact-link:hover {
+  background: radial-gradient(163.86% 91.87% at 100% 100%, rgb(190, 178, 223) 16.4%, rgb(255, 115, 70) 35%, rgb(255, 115, 70) 54.6%, rgb(190, 178, 223) 73.1%, rgb(151, 136, 181) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer__social-title {
+  font-weight: 400;
+  margin-bottom: 0px;
+  margin-right: 60px;
+  font-size: 24px;
+  line-height: 100%;
+  color: #9788b5;
+}
+@media (max-width: 769px) {
+  .footer__social-title {
+    margin-right: auto;
+    margin-left: 0px;
+    margin-bottom: 36px;
+    margin-top: 16px;
+  }
+}
+.footer__socials {
+  gap: 60px;
+}
+@media (max-width: 769px) {
+  .footer__socials {
+    margin-right: auto;
+    margin-left: 0px;
+    gap: 36px;
+  }
+}
+.footer__socials a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+}
+.footer__socials a:hover {
+  color: #ff6b3b;
 }
 
 /*# sourceMappingURL=style.css.map */
