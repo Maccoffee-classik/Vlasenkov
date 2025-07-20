@@ -983,6 +983,126 @@ body {
   margin-bottom: 0;
 }
 
+/*FAQ*/
+.faq {
+  padding: 100px 0;
+  font-family: "Unbounded", sans-serif;
+  position: relative;
+  z-index: 1;
+}
+.faq::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px;
+  right: -50px;
+  bottom: 0;
+  background: #f3edff;
+  filter: blur(100px);
+  z-index: -1;
+}
+.faq__content {
+  background: #fff;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 48px;
+  padding: 85px 0 99px 85px;
+  height: 100%;
+  position: relative;
+}
+.faq__content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -100vw;
+  width: 100vw;
+  background: #fff;
+  z-index: 0;
+}
+.faq__title {
+  font-weight: 500;
+  margin-bottom: 42px;
+  color: #42365a;
+  font-size: 30px;
+  line-height: 120%;
+}
+.faq__item {
+  border: none;
+  background: transparent;
+  margin-bottom: 1rem;
+}
+.faq__button {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 120%;
+  background-color: #f3edff;
+  border-radius: 40px;
+  box-shadow: none;
+  padding: 30px 20px;
+  color: #2e254d;
+}
+.faq__button::after {
+  display: none;
+}
+.faq__icon {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin-right: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.faq__icon--plus {
+  background-image: url("img/plus.svg");
+}
+.faq__icon--minus {
+  background-image: url("img/minus.svg");
+}
+.faq__body {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  background-color: #392c55;
+  color: #fff;
+  border-radius: 0 0 40px 40px;
+  padding: 0 20px 30px 105px;
+  font-size: 20px;
+  line-height: 120%;
+  color: #fff;
+  margin-top: -1px;
+}
+.faq__body p {
+  position: relative;
+  margin-top: 0px;
+  z-index: 3;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-collapse {
+  transition: none !important;
+}
+
+.accordion-item:first-of-type > .accordion-header .accordion-button {
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.accordion-item:last-of-type > .accordion-header .accordion-button.collapsed {
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
+.accordion-button:not(.collapsed) {
+  align-items: flex-start;
+  border-radius: 40px 40px 0 0;
+  color: #9788b5;
+  background-color: #392c55;
+  box-shadow: none;
+  padding-bottom: 0;
+}
+
 /*BOTTOM FORM*/
 .contact-form {
   font-family: "Manrope", sans-serif;

@@ -1107,6 +1107,134 @@ body {
   }
 }
 
+/*FAQ*/
+
+.faq {
+  padding: 100px 0;
+  font-family: $font-unbounded;
+  position: relative;
+  z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -50px;
+      right: -50px;
+      bottom: 0;
+      background: #f3edff;
+      filter: blur(100px);
+      z-index: -1;
+    }
+
+  &__content {
+    background: #fff;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 48px;
+    padding: 85px 0 99px 85px;
+    height: 100%;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -100vw;
+      width: 100vw;
+      background: #fff;
+      z-index: 0;
+    }
+  }
+
+  &__title {
+    font-weight: $font-unbounded-medium;
+    margin-bottom: 42px;
+    color: $color-black-purple;
+    font-size: 30px;
+    line-height: 120%;
+
+  }
+
+  &__item {
+    border: none;
+    background: transparent;
+    margin-bottom: 1rem;
+  }
+
+  &__button {
+    font-weight: $font-unbounded-regular;
+    font-size: 30px;
+    line-height: 120%;
+    background-color: #f3edff;
+    border-radius: 40px;
+    box-shadow: none;
+    padding: 30px 20px;
+    color: #2e254d;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &--plus {
+      background-image: url('img/plus.svg');
+    }
+
+    &--minus {
+      background-image: url('img/minus.svg');
+    }
+  }
+
+  &__body {
+    font-family: $font-manrope;
+    font-weight: $font-manrope-regular;
+    background-color: #392c55;
+    color: #fff;
+    border-radius:  0 0 40px 40px;
+    padding:0 20px 30px 105px;
+    font-size: 20px;
+    line-height: 120%;
+    color: #fff;
+    margin-top: -1px;
+    p {
+      position: relative;
+      margin-top: 0px;
+      z-index: 3;
+
+    }
+  }
+}
+.accordion-button:focus {
+  box-shadow: none;
+}
+.accordion-collapse {
+  transition: none !important;
+}
+
+.accordion-item:first-of-type>.accordion-header .accordion-button {
+  border-top-left-radius:40px;
+  border-top-right-radius: 40px;
+}
+.accordion-item:last-of-type>.accordion-header .accordion-button.collapsed {
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
+.accordion-button:not(.collapsed) {
+  align-items: flex-start;
+  border-radius: 40px 40px 0 0;
+  color: #9788b5;
+  background-color: #392c55;
+  box-shadow: none;
+  padding-bottom: 0;
+}
 
 /*BOTTOM FORM*/
 .contact-form {
