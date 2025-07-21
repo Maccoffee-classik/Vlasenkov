@@ -1,6 +1,7 @@
 
 $color-white:  #fff;
-$color-black-purple:  #42365a;
+$color-black-purple: #42365a;
+$color-light-purple: #9788b5;
 $color-orange:#ff7346;
 $color-black: #000;
 $font-unbounded: "Unbounded", sans-serif;
@@ -1106,6 +1107,176 @@ body {
     }
   }
 }
+/*CALCULATE-CONTACT-FORM*/
+
+
+$calc-form-accent: #ff6a00;       // акцентный цвет (оранжевый)
+$calc-form-text: #ffffff;         // основной цвет текста (белый)
+$calc-form-text-muted: rgba(255, 255, 255, 0.8); // приглушенный белый для вспомогательного текста
+.calculate-contact-form {
+  font-family: $font-unbounded;
+  padding: 270px 0 240px;
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+    right: -50px;
+    bottom: 0;
+    background: #f3edff;
+    filter: blur(100px);
+    z-index: -1;
+    }
+  &__wrapper {
+    background-color: $color-black-purple;
+    position: relative;
+    border-radius: 0 40px 40px 0;
+    padding: 85px 85px 150px 0;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -100vw;
+      width: 100vw;
+      background: $color-black-purple;
+      z-index: 0;
+    }
+  }
+
+  &__title {
+    font-weight: $font-unbounded-medium;
+    text-align: left;
+    margin-bottom: 75px;
+    font-size: 36px;
+    line-height: 120%;
+    color: $color-white;
+  }
+
+  &__group-title {
+    font-weight: $font-unbounded-regular;
+    margin-bottom: 30px;
+    font-size: 27px;
+    line-height: 120%;
+    color: $color-light-purple;
+  }
+
+  // Отступ между группами опций (тип сайта, тип услуги, ваши данные)
+  &__group:not(:last-child) {
+    margin-bottom: 65px;
+  }
+
+  // Стили для опций (радиокнопок) и их меток
+  .row .col-lg-6:nth-of-type(1) .form-check-input {
+    background-color: #564871;
+    border: none;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba($color-orange, 0.25);
+    }
+    &:checked {
+      background-color: $color-orange;
+      border-color: $color-orange;
+    }
+  }
+  .row .col-lg-6:nth-of-type(2) .form-check-input {
+    border-radius: 4px;
+    background-color: #564871;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba($color-orange, 0.25);
+    }
+    &:checked {
+      background-color: $color-orange;
+      border-color: $color-orange;
+    }
+  }
+  .form-check-input:checked[type=radio] {
+    --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+  }
+  .form-check-label {
+    font-family: $font-manrope;
+    font-weight: $font-manrope-medium;
+    font-size: 18px;
+    line-height: 120%;
+    color: $color-white;
+    margin-left: 12px;
+  }
+  // Можно добавить отступы между радио-элементами
+  &__option:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  &__option {
+    display: flex;
+    align-items: end;
+  }
+
+
+// Поля ввода (имя, телефон)
+  &__field-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  &__input {
+    font-family: $font-manrope;
+    font-weight: $font-manrope-medium;
+    background: #564871;
+    border: 2px solid $color-light-purple;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    color: $color-white;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    font-size: 24px;
+
+    &::placeholder {
+      font-family: $font-manrope;
+      font-weight: $font-manrope-medium;
+      color: $color-white;
+    }
+    &:focus {
+      border-color: $color-orange;
+      box-shadow: 0 0 0 0.2rem rgba($calc-form-accent, 0.3);
+      outline: none;
+    }
+  }
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    // Место для настройки фонового изображения или иконки через ::before, если понадобится
+  }
+
+  // Соглашение (чекбокс) и его метка
+  &__agreement {
+    display: flex;
+    align-items: center;
+    font-family: $font-manrope;
+    font-weight: $font-manrope-medium;
+    font-size: 18px;
+    line-height: 130%;
+    color:$color-white;
+    margin-bottom: 71px;
+
+  }
+
+}
+
+
 
 /*FAQ*/
 
@@ -1230,7 +1401,7 @@ body {
 .accordion-button:not(.collapsed) {
   align-items: flex-start;
   border-radius: 40px 40px 0 0;
-  color: #9788b5;
+  color: $color-light-purple;
   background-color: #392c55;
   box-shadow: none;
   padding-bottom: 0;
@@ -1288,7 +1459,7 @@ body {
     font-weight: $font-unbounded-medium;
     font-size: 36px;
     line-height: 120%;
-    color: #9788b5;
+    color: $color-light-purple;
     margin-bottom: 32px;
     @media (max-width: 992px) {
       margin-bottom: 79px;
@@ -1305,7 +1476,7 @@ body {
 
   &__input {
     background: #564871;
-    border: 2px solid #9788b5;
+    border: 2px solid $color-light-purple;
     border-radius: 12px;
     color: #fff;
     padding: 18px 20px;
@@ -1444,7 +1615,7 @@ body {
     margin-bottom: 38px;
     font-size: 24px;
     line-height: 100%;
-    color: #9788b5;
+    color: $color-light-purple;
 
   }
   &__border-mob {
@@ -1503,7 +1674,7 @@ body {
     }
     .footer__contact-tel {
       margin-right: 20px;
-      color: #9788b5;
+      color: $color-light-purple;
       text-decoration: none;
       font-weight: $font-unbounded-regular;
       font-size: 24px;
@@ -1532,7 +1703,7 @@ body {
     }
     .footer__contact-link {
       margin-right: 20px;
-      color: #9788b5;
+      color: $color-light-purple;
       text-decoration: none;
       font-weight: $font-unbounded-regular;
       font-size: 20px;
@@ -1571,7 +1742,7 @@ body {
     margin-right: 60px;
     font-size: 24px;
     line-height: 100%;
-    color: #9788b5;
+    color: $color-light-purple;
     @media (max-width: 769px) {
       margin-right: auto;
       margin-left: 0px;
