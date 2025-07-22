@@ -12,6 +12,7 @@
     <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
 </head>
+<script src="https://unpkg.com/inputmask@5.0.8/dist/inputmask.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <body>
 <div class="hero">
@@ -75,7 +76,7 @@
                             admin@vlasenkov.com
                         </a>
 
-                        <a href="#" class="btn  header__cta ">
+                        <a href="#" class="btn  header__cta callback-project ">
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_241_687)">
                                     <path d="M16.5 1.5L11.25 16.5L8.25 9.75M16.5 1.5L1.5 6.75L8.25 9.75M16.5 1.5L8.25 9.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -106,7 +107,7 @@
                     <p class="main__subtitle ">
                         Решаем задачи бизнеса комплексно, проводим аналитику, следим за ключевыми метриками – все для уверенного и стабильного роста
                     </p>
-                    <button href="#" class="btn btn-orange main__cta">
+                    <button href="#" class="btn btn-orange main__cta callback-project">
                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.5 2L15.5 22L11.5 13M22.5 2L2.5 9L11.5 13M22.5 2L11.5 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
@@ -115,7 +116,7 @@
                 </div>
 
                 <div class="col-12 col-lg-5 text-center main__image-col">
-                    <img src="img/atom.png" alt="3D объект" class="main__image img-fluid">
+                    <img src="img/atom.png" alt="3D объект" class="main__image img-fluid floating">
                 </div>
             </div>
         </div>
@@ -168,6 +169,7 @@
     <div class="benefits__background"></div>
 
     <div class="container position-relative">
+        <div class="row align-items-center">
         <div class=" col-10 benefits__card">
             <h2 class="benefits__title">
                 Почему стоит заказать разработку и продвижение сайта в нашей компании
@@ -221,6 +223,11 @@
                 </div>
             </div>
         </div>
+        <div class="col-12 col-lg-2 text-center benefits__image-col">
+                <img src="img/round.png" alt="3D объект" class="benefits__image img-fluid floating">
+        </div>
+    </div>
+
     </div>
 </section>
 
@@ -244,6 +251,7 @@
                         Разработаем интернет-магазин, который увеличит
                         ваши продажи и улучшит пользовательский опыт
                     </p>
+                    <img src="img/arrow-cursor.png" alt="Стрелка" class="sites__arrow">
                 </div>
             </div>
 
@@ -301,7 +309,7 @@
 
             <!-- Карточка CTA -->
             <div class="col-md-6 col-lg-6">
-                <a href="#" class="sites__cta">
+                <a href="#" class="sites__cta callback-project">
                     <img src="img/icon-site-6.svg" alt="">
                     <span>Обсудить<br>проект</span>
                 </a>
@@ -312,8 +320,11 @@
 
 <section class="workflow">
     <div class="container">
-        <div class="row">
-            <div class="col-2"></div>
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-2 text-center workflow__image-col z-3">
+                    <img src="img/flag.png" alt="3D объект" class="workflow__image img-fluid floating">
+            </div>
+
             <div class="col-10">
                 <div class="workflow__card">
                     <h2 class="workflow__title">Как мы работаем</h2>
@@ -398,6 +409,7 @@
                         <li>Увеличения трафика и его аналитика</li>
                     </ul>
                     <button class="services__card-button">Заказать</button>
+                    <img src="img/arrow-cursor.png" alt="Стрелка" class="services__card__arrow">
                 </div>
             </div>
 
@@ -503,7 +515,7 @@
                 </div>
                 <!-- Стрелки навигации слайдера -->
 
-                <div class="swiper-pagination"></div>
+                <div class="d-block d-lg-none  swiper-pagination"></div>
 
             </div>
         </div>
@@ -564,7 +576,7 @@
                     </div>
                 </div>
 
-                <div class="swiper-pagination"></div>
+                <div class="d-block d-lg-none  swiper-pagination"></div>
             </div>
         </div>
 
@@ -623,7 +635,7 @@
                     </div>
                 </div>
 
-                <div class="swiper-pagination"></div>
+                <div class="d-block d-lg-none  swiper-pagination"></div>
             </div>
         </div>
     </div>
@@ -635,7 +647,7 @@
 
 <section class="cta-project">
     <div class="container">
-        <div class="cta-project__box row align-items-center gx-1 gy-3">
+        <div class="cta-project__box row align-items-center gx-1 ">
             <!-- Левая колонка: Текст -->
             <div class="col-12  col-lg-7 order-2 order-lg-1 ">
                 <div class="cta-project__text">
@@ -650,7 +662,7 @@
 
             <!-- Правая колонка: Кнопка -->
             <div class="col-12 col-lg-3 order-3 text-lg-end text-start">
-                <button href="#" class="cta-project__btn">Обсудить</button>
+                <button href="#" class="cta-project__btn callback-project">Обсудить</button>
             </div>
         </div>
     </div>
@@ -886,7 +898,7 @@
 
 <section class="calculate-contact-form">
     <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-10">
                 <div class="calculate-contact-form__wrapper">
                     <h2 class="calculate-contact-form__title">
@@ -976,8 +988,8 @@
                                         <span class="calculate-contact-form__icon calculate-contact-form__icon--name"></span>
                                     </div>
                                     <div class="calculate-contact-form__field-group">
-                                        <input type="tel" class="form-control calculate-contact-form__input"
-                                               id="calculate-contact-form-phone" name="phone" placeholder="Телефон" required>
+                                        <input type="tel" class="form-control calculate-contact-form__input phone-mask"
+                                               id="calculate-contact-form-phone " name="phone" placeholder="Телефон" required>
                                         <span class="calculate-contact-form__icon calculate-contact-form__icon--phone"></span>
                                     </div>
                                 </div>
@@ -996,8 +1008,8 @@
             </div>
 
             </div>
-            <div class="col-2">
-
+            <div class="col-12 col-lg-2 text-center calculate-contact-form__image-col">
+                <img src="img/star.png" alt="3D объект" class="calculate-contact-form__image img-fluid floating">
             </div>
         </div>
 
@@ -1088,7 +1100,7 @@
 
         <!-- Slider Navigation and Pagination (custom controls outside the swiper) -->
 
-        <div class="team-slider__pagination"></div>
+        <div class="d-block d-lg-none team-slider__pagination"></div>
     </div>
 </section>
 
@@ -1171,7 +1183,7 @@
 
         <!-- Slider Navigation and Pagination (custom controls outside the swiper) -->
 
-        <div class="certificate-slider__pagination"></div>
+        <div class="d-block d-lg-none certificate-slider__pagination"></div>
     </div>
 </section>
 
@@ -1210,8 +1222,10 @@
 
 <section class="faq">
     <div class="container ">
-        <div class="row">
-            <div class="col-2"></div>
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-2 text-center faq__image-col z-3">
+                <img src="img/clock.png" alt="3D объект" class="faq__image img-fluid floating">
+            </div>
             <div class="col-10">
                 <div class="faq__content">
                 <h2 class="faq__title">Часто задаваемые вопросы</h2>
@@ -1376,13 +1390,14 @@
 
     <!-- Slider Navigation and Pagination (custom controls outside the swiper) -->
 
-    <div class="article-slider__pagination"></div>
+    <div class=" d-block d-lg-none article-slider__pagination"></div>
     </div>
 </section>
 
 <section class="contact-form">
     <div class="container contact-form__container position-relative">
-        <div class="col-10 col-lg-12 contact-form__box">
+        <div class="col-10 col-lg-12 contact-form__box ">
+            <img src="img/lego.png" alt="Стрелка" class="contact-form__lego">
             <h2 class="contact-form__title">
                 Остались вопросы –<br class="d-lg-none"> свяжитесь с нами
             </h2>
@@ -1394,12 +1409,12 @@
                 </div>
                 <!-- Телефон -->
                 <div class="col-12 col-lg">
-                    <input type="tel" class="form-control contact-form__input" placeholder="Телефон" required>
+                    <input type="tel" class="form-control contact-form__input phone-mask" placeholder="Телефон" required>
                     <div class="invalid-feedback">Введите корректный телефон</div>
                 </div>
                 <!-- Кнопка -->
                 <div class="col-12 col-lg-auto">
-                    <button   type="submit" class="btn  btn-orange ">Обсудить </button>
+                    <button   type="submit" class="btn  btn-orange callback-project">Обсудить </button>
 
                 </div>
                 <!-- Чекбокс -->
@@ -1482,10 +1497,65 @@
 </footer>
 
 
+<!--
+<div class="calculate-contact-form__group mb-4 ">
+    <div class="calculate-contact-form__group-title">Ваши данные</div>
+    <div class="calculate-contact-form__field-group">
+        <input type="text" class="form-control calculate-contact-form__input"
+               id="calculate-contact-form-name" name="name" placeholder="Имя" required>
+        <span class="calculate-contact-form__icon calculate-contact-form__icon--name"></span>
+    </div>
+    <div class="calculate-contact-form__field-group">
+        <input type="tel" class="form-control calculate-contact-form__input"
+               id="calculate-contact-form-phone" name="phone" placeholder="Телефон" required>
+        <span class="calculate-contact-form__icon calculate-contact-form__icon--phone"></span>
+    </div>
+</div>
+
+-->
+
+
+
+<!-- Модалка -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content project-modal">
+            <button type="button" class="btn-close project-modal__close" data-bs-dismiss="modal" aria-label="Close"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.5 1.5L1.5 16.5M1.5 1.5L16.5 16.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg></button>
+            <div class="project-modal__body">
+                <h3 class="project-modal__title">Обсудить проект</h3>
+                <form class="project-modal__form">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Имя" required />
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control phone-mask" placeholder="Телефон" required />
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="consent" checked required />
+                        <label class="form-check-label" for="consent">
+                            Соглашение о предоставлении персональных данных
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-orange w-100">Обсудить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+
+    /*HEADER SCROLL*/
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header');
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
     // Инициализируем Swiper для каждого слайдера вкладки
     const swiperDev = new Swiper('#dev .swiper', {
         loop: true,
@@ -1783,6 +1853,19 @@
             });
         });
     })();
+
+    /*MODAL*/
+
+        document.querySelectorAll('.callback-project').forEach(button => {
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+            modal.show();
+        });
+    });
+
+    Inputmask("+7 (999) 999-99-99").mask(document.querySelectorAll(".phone-mask"));
+
 
 
 
