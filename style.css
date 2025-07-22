@@ -941,7 +941,6 @@ body {
   padding: 0 0 100px;
 }
 .cta-project__box {
-  position: absolute;
   background: #f3edff;
   border-radius: 40px;
   padding: 52px 60px;
