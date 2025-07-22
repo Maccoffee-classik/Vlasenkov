@@ -2013,9 +2013,17 @@ body {
   margin-top: 10px;
 }
 .contact-form__check .form-check-input {
-  background-color: #ff6b3b;
+  background-color: #564871;
   border: none;
   margin-right: 8px;
+}
+.contact-form__check .form-check-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(255, 115, 70, 0.25);
+}
+.contact-form__check .form-check-input:checked {
+  background-color: #ff7346;
+  border-color: #ff7346;
 }
 .contact-form__check .form-check-label {
   color: #fff;

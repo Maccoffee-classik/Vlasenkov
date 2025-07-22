@@ -2255,9 +2255,17 @@ body {
     margin-top: 10px;
 
     .form-check-input {
-      background-color: #ff6b3b;
+      background-color: #564871;
       border: none;
       margin-right: 8px;
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgba($color-orange, 0.25);
+      }
+      &:checked {
+        background-color: $color-orange;
+        border-color: $color-orange;
+      }
     }
 
     .form-check-label {
