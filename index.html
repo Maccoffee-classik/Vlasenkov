@@ -14,6 +14,8 @@
 </head>
 <script src="https://unpkg.com/inputmask@5.0.8/dist/inputmask.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+
 <body>
 <div class="hero">
 
@@ -41,9 +43,10 @@
                                 Услуги
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                                <li><a class="dropdown-item" href="#">Веб-разработка</a></li>
-                                <li><a class="dropdown-item" href="#">Мобильные приложения</a></li>
-                                <li><a class="dropdown-item" href="#">UI/UX дизайн</a></li>
+                                <li><a class="dropdown-item" href="#">Разработка сайтов</a></li>
+                                <li><a class="dropdown-item" href="#">Продвижение сайтов</a></li>
+                                <li><a class="dropdown-item" href="#">Контекстная реклама</a></li>
+                                <li><a class="dropdown-item" href="#">Техническая реклама</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -116,7 +119,24 @@
                 </div>
 
                 <div class="col-12 col-lg-5 text-center main__image-col">
-                    <img src="img/atom.png" alt="3D объект" class="main__image img-fluid floating">
+
+                    <img
+                            class="lazy main__image img-fluid floating"
+                            alt="3D объект — атом"
+                            src="img/atom-320.png"
+                            data-src="img/atom-1024.png"
+                            data-srcset="
+    img/atom-320.png 320w,
+    img/atom-640.png 640w,
+    img/atom-1024.png 1024w,
+    img/atom-1440.png 1440w
+  "
+                            data-sizes="(max-width: 576px) 320px,
+              (max-width: 768px) 640px,
+              (max-width: 1200px) 1024px,
+              1440px"
+                            loading="lazy"
+                    />
                 </div>
             </div>
         </div>
@@ -1397,7 +1417,7 @@
 <section class="contact-form">
     <div class="container contact-form__container position-relative">
         <div class="col-10 col-lg-12 contact-form__box ">
-            <img src="img/lego.png" alt="Стрелка" class="contact-form__lego">
+            <img src="img/lego.png" alt="Lego" class="contact-form__lego">
             <h2 class="contact-form__title">
                 Остались вопросы –<br class="d-lg-none"> свяжитесь с нами
             </h2>
@@ -1486,40 +1506,92 @@
         <div class="footer__bottom d-flex flex-column flex-md-row justify-content-center align-items-center mt-4 pt-3">
             <h6 class="footer__social-title">Соцсети</h6>
             <div class="footer__socials d-flex  mt-3 mt-md-0">
-                <a href="#" class="footer__social"><img src="img/icon-footer-1.svg" alt=""></a>
-                <a href="#" class="footer__social"><img src="img/icon-footer-2.svg" alt=""></a>
-                <a href="#" class="footer__social"><img src="img/icon-footer-3.svg" alt=""></a>
-                <a href="#" class="footer__social"><img src="img/icon-footer-4.svg" alt=""></a>
-                <a href="#" class="footer__social"><img src="img/icon-footer-5.svg" alt=""></a>
+                <a href="#" class="footer__social"><svg width="36" height="26" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 0C18.033 1.62026e-06 29.2623 0.00131912 32.0645 0.75293C33.6143 1.16783 34.8323 2.38568 35.2471 3.93555C35.9968 6.74194 36 12.6006 36 12.6006C36 12.6078 35.9993 18.4609 35.2471 21.2656C34.8323 22.8155 33.6143 24.0334 32.0645 24.4482C29.2623 25.1999 18.033 25.2012 18 25.2012C18 25.2012 6.74202 25.201 3.93555 24.4482C2.38568 24.0334 1.16781 22.8155 0.75293 21.2656C0.000694126 18.4609 2.8608e-07 12.6078 0 12.6006C0 12.6006 0.000220731 6.74193 0.75293 3.93555C1.16781 2.38566 2.38568 1.16781 3.93555 0.75293C6.742 0.000223888 18 0 18 0ZM14.3965 18L23.749 12.6006L14.3965 7.20117V18Z" fill="url(#paint0_radial_311_5403)" />
+                    <defs>
+                        <radialGradient id="paint0_radial_311_5403" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(36 25.2012) rotate(-128.282) scale(25.8176 45.014)">
+                            <stop offset="0.164182" stop-color="#BEB2DF" />
+                            <stop offset="0.35" stop-color="#FF7346" />
+                            <stop offset="0.545777" stop-color="#FF7346" />
+                            <stop offset="0.730834" stop-color="#BEB2DF" />
+                            <stop offset="1" stop-color="#9788B5" />
+                        </radialGradient>
+                    </defs>
+                </svg></a>
+                <a href="#" class="footer__social"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_311_5406)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M27.5766 34.1687C28.0596 34.5107 28.6821 34.5962 29.2371 34.3862C29.7921 34.1747 30.2001 33.7007 30.3231 33.1262C31.6266 27.0002 34.7886 11.4947 35.9751 5.92222C36.0651 5.50222 35.9151 5.06572 35.5851 4.78522C35.2551 4.50472 34.7976 4.42372 34.3896 4.57522C28.1001 6.90322 8.7306 14.1707 0.813597 17.1002C0.311097 17.2862 -0.0159032 17.7692 0.000596781 18.2987C0.0185968 18.8297 0.375597 19.2902 0.890097 19.4447C4.4406 20.5067 9.1011 21.9842 9.1011 21.9842C9.1011 21.9842 11.2791 28.5617 12.4146 31.9067C12.5571 32.3267 12.8856 32.6567 13.3191 32.7707C13.7511 32.8832 14.2131 32.7647 14.5356 32.4602C16.3596 30.7382 19.1796 28.0757 19.1796 28.0757C19.1796 28.0757 24.5376 32.0042 27.5766 34.1687ZM11.0616 21.1532L13.5801 29.4602L14.1396 24.1997C14.1396 24.1997 23.8701 15.4232 29.4171 10.4207C29.5791 10.2737 29.6016 10.0277 29.4666 9.85522C29.3331 9.68272 29.0871 9.64222 28.9026 9.75922C22.4736 13.8647 11.0616 21.1532 11.0616 21.1532Z" fill="url(#paint0_radial_311_5406)" />
+                    </g>
+                    <defs>
+                        <radialGradient id="paint0_radial_311_5406" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(36.0008 34.5) rotate(-123.545) scale(28.946 47.7953)">
+                            <stop offset="0.164182" stop-color="#BEB2DF" />
+                            <stop offset="0.35" stop-color="#FF7346" />
+                            <stop offset="0.545777" stop-color="#FF7346" />
+                            <stop offset="0.730834" stop-color="#BEB2DF" />
+                            <stop offset="1" stop-color="#9788B5" />
+                        </radialGradient>
+                        <clipPath id="clip0_311_5406">
+                            <rect width="36" height="36" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg></a>
+                <a href="#" class="footer__social"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.5391 0C26.6024 0.00706317 26.7606 0.041426 27.5547 0.15625C29.1936 0.392705 30.5687 1.04664 31.6934 2.12109C32.3235 2.72766 32.7585 3.32087 33.1494 4.11523C33.6257 5.08548 33.8596 6.00398 33.9668 7.36914C33.9898 7.66577 34 12.326 34 16.9893C34 21.6534 33.9908 26.3238 33.9678 26.6172C33.8619 27.9608 33.6275 28.8868 33.166 29.8389C32.2482 31.7326 30.5614 33.1139 28.5244 33.6396C27.7858 33.8306 27.1172 33.9205 25.9668 33.9746C25.5538 33.9955 21.2618 34 16.9697 34C12.6767 34 8.38586 33.9871 7.96387 33.9688C6.97021 33.9217 6.19591 33.8221 5.49512 33.6416C3.47132 33.1184 1.75302 31.7171 0.853516 29.8496C0.382871 28.8741 0.160646 27.9819 0.0429688 26.5645C0.0089752 26.1616 0.000976562 24.0868 0.000976562 16.9932C0.00097631 14.6034 -0.0016382 12.8216 0.000976562 11.4678C0.00777559 7.40671 0.0412167 7.24421 0.15625 6.44922C0.392897 4.81131 1.04733 3.43349 2.12598 2.31348C2.71824 1.69935 3.31818 1.26076 4.0791 0.882812C5.06642 0.391131 5.97328 0.162113 7.42969 0.0410156C7.83429 0.00756847 9.91125 0 17.0059 0H22.5391ZM16.9961 4.44727C13.5891 4.44727 13.1608 4.46153 11.8223 4.52246C10.4862 4.58369 9.57436 4.796 8.77637 5.10645C7.95087 5.42712 7.25037 5.85561 6.55273 6.55371C5.85466 7.25146 5.42611 7.952 5.10449 8.77734C4.79332 9.5759 4.58163 10.4891 4.52148 11.8252C4.46162 13.1641 4.44531 13.5925 4.44531 17.002C4.44531 20.4117 4.46082 20.8385 4.52148 22.1777C4.58295 23.5142 4.7944 24.4264 5.10449 25.2246C5.42534 26.0504 5.85384 26.7514 6.55176 27.4492C7.24902 28.1474 7.94961 28.5768 8.77441 28.8975C9.57295 29.2079 10.4855 29.4202 11.8213 29.4814C13.1601 29.5424 13.5879 29.5566 16.9961 29.5566C20.4051 29.5566 20.8321 29.5424 22.1709 29.4814C23.5071 29.4202 24.4202 29.2079 25.2188 28.8975C26.0438 28.5768 26.7432 28.1474 27.4404 27.4492C28.1386 26.7514 28.568 26.0501 28.8896 25.2246C29.1981 24.4262 29.4099 23.5135 29.4727 22.1777C29.5328 20.8386 29.5479 20.4116 29.5479 17.002C29.5479 13.5923 29.5328 13.1643 29.4727 11.8252C29.4099 10.4889 29.1981 9.57649 28.8896 8.77832C28.568 7.95256 28.1386 7.25156 27.4404 6.55371C26.7423 5.85541 26.044 5.42684 25.2178 5.10645C24.4176 4.79597 23.5052 4.58367 22.1689 4.52246C20.8304 4.46153 20.4041 4.44727 16.9961 4.44727ZM15.8721 6.70898C16.2062 6.70846 16.5792 6.70898 16.998 6.70898C20.3493 6.70898 20.7469 6.72109 22.0703 6.78125C23.2938 6.83725 23.958 7.04204 24.4004 7.21387C24.9861 7.44142 25.4038 7.71392 25.8428 8.15332C26.2819 8.59266 26.5543 9.01089 26.7822 9.59668C26.954 10.0387 27.1582 10.7036 27.2139 11.9277C27.274 13.251 27.2871 13.6487 27.2871 16.999C27.2871 20.3493 27.274 20.7472 27.2139 22.0703C27.1579 23.2944 26.954 23.9593 26.7822 24.4014C26.5547 24.9873 26.2821 25.4046 25.8428 25.8438C25.4035 26.2831 24.9862 26.5547 24.4004 26.7822C23.9585 26.9548 23.2938 27.1588 22.0703 27.2148C20.7472 27.275 20.3493 27.2881 16.998 27.2881C13.6465 27.2881 13.2489 27.275 11.9258 27.2148C10.7024 27.1583 10.0384 26.954 9.5957 26.7822C9.01012 26.5547 8.59152 26.283 8.15234 25.8438C7.71307 25.4044 7.4409 24.9865 7.21289 24.4004C7.04109 23.9583 6.83597 23.2935 6.78027 22.0693C6.72015 20.7462 6.70801 20.3483 6.70801 16.9961C6.70801 13.6434 6.72013 13.2473 6.78027 11.9238C6.83626 10.7 7.04111 10.0353 7.21289 9.59277C7.44036 9.00706 7.71313 8.58875 8.15234 8.14941C8.59161 7.71004 9.01001 7.43803 9.5957 7.20996C10.0381 7.03736 10.7024 6.8336 11.9258 6.77734C13.0837 6.72503 13.5328 6.70867 15.8721 6.70605V6.70898ZM16.998 10.5547C13.4384 10.5547 10.5527 13.4413 10.5527 17.002C10.5527 20.5626 13.4384 23.4482 16.998 23.4482C20.5577 23.4482 23.4424 20.5626 23.4424 17.002C23.4424 13.4413 20.5577 10.5547 16.998 10.5547ZM16.998 12.8174C19.3085 12.8174 21.1816 14.6905 21.1816 17.002C21.1816 19.3131 19.3085 21.1865 16.998 21.1865C14.6873 21.1865 12.8145 19.3131 12.8145 17.002C12.8145 14.6905 14.6873 12.8174 16.998 12.8174ZM23.5439 8.80176C22.7848 8.87883 22.1916 9.51993 22.1914 10.2998C22.1914 11.1316 22.8667 11.8066 23.6982 11.8066C24.5296 11.8064 25.2041 11.1315 25.2041 10.2998C25.2039 9.46833 24.5295 8.79414 23.6982 8.79395L23.5439 8.80176Z" fill="url(#paint0_radial_311_5409)" />
+                    <defs>
+                        <radialGradient id="paint0_radial_311_5409" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(34 34) rotate(-118.921) scale(31.2374 47.4049)">
+                            <stop offset="0.164182" stop-color="#BEB2DF" />
+                            <stop offset="0.35" stop-color="#FF7346" />
+                            <stop offset="0.545777" stop-color="#FF7346" />
+                            <stop offset="0.730834" stop-color="#BEB2DF" />
+                            <stop offset="1" stop-color="#9788B5" />
+                        </radialGradient>
+                    </defs>
+                </svg></a>
+                <a href="#" class="footer__social"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.97861 4.97959C11.6181 -1.65987 22.3821 -1.65986 29.0206 4.97959C35.6601 11.6181 35.6601 22.3821 29.0206 29.0216C23.3342 34.708 14.6208 35.523 8.06552 31.4679L1.17294 32.8272L2.53232 25.9347C-1.52288 19.3794 -0.707788 10.666 4.97861 4.97959ZM11.2208 7.50889C10.6854 6.9739 9.81762 6.97373 9.28232 7.50889L8.67001 8.12217C6.58744 10.2047 6.58744 13.5816 8.67001 15.6642L18.336 25.3302C20.4186 27.4128 23.7954 27.4128 25.878 25.3302L26.4903 24.7179C27.0258 24.1825 27.0258 23.3138 26.4903 22.7784L23.1407 19.4288C22.4165 19.9376 21.6527 20.265 20.9395 20.3917C20.0108 20.5567 19.1669 20.3807 18.6075 19.8214L14.1788 15.3927C13.6194 14.8334 13.4434 13.9894 13.6085 13.0606C13.735 12.3474 14.0626 11.5838 14.5714 10.8595L11.2208 7.50889Z" fill="url(#paint0_radial_241_1345)" />
+                    <defs>
+                        <radialGradient id="paint0_radial_241_1345" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(34 34) rotate(-118.921) scale(31.2374 47.4049)">
+                            <stop offset="0.164182" stop-color="#BEB2DF" />
+                            <stop offset="0.35" stop-color="#FF7346" />
+                            <stop offset="0.545777" stop-color="#FF7346" />
+                            <stop offset="0.730834" stop-color="#BEB2DF" />
+                            <stop offset="1" stop-color="#9788B5" />
+                        </radialGradient>
+                    </defs>
+                </svg></a>
+                <a href="#" class="footer__social"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.55911 11.2889H8.60725V33.9992H1.55911V11.2889ZM5.08337 0C7.33604 0 9.16674 1.83393 9.16674 4.09436C9.16674 6.35252 7.33604 8.18644 5.08337 8.18644C2.82541 8.18644 1 6.35252 1 4.09436C1 1.83393 2.82541 0 5.08337 0Z" fill="url(#paint0_radial_241_1348)" />
+                    <path d="M13.0273 11.2899H19.7857V14.3954H19.8821C20.8227 12.6092 23.1219 10.7275 26.5487 10.7275C33.6837 10.7275 35.0006 15.4297 35.0006 21.5445V34.0002H27.9578V22.9561C27.9578 20.3218 27.912 16.9344 24.2964 16.9344C20.6297 16.9344 20.0702 19.8056 20.0702 22.7669V34.0002H13.0273V11.2899Z" fill="url(#paint1_radial_241_1348)" />
+                    <defs>
+                        <radialGradient id="paint0_radial_241_1348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(9.16674 33.9992) rotate(-97.5597) scale(27.5809 12.8958)">
+                            <stop offset="0.164182" stop-color="#BEB2DF" />
+                            <stop offset="0.35" stop-color="#FF7346" />
+                            <stop offset="0.545777" stop-color="#FF7346" />
+                            <stop offset="0.730834" stop-color="#BEB2DF" />
+                            <stop offset="1" stop-color="#9788B5" />
+                        </radialGradient>
+                        <radialGradient id="paint1_radial_241_1348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(35.0006 34.0002) rotate(-117.549) scale(21.1085 31.0329)">
+                            <stop offset="0.164182" stop-color="#BEB2DF" />
+                            <stop offset="0.35" stop-color="#FF7346" />
+                            <stop offset="0.545777" stop-color="#FF7346" />
+                            <stop offset="0.730834" stop-color="#BEB2DF" />
+                            <stop offset="1" stop-color="#9788B5" />
+                        </radialGradient>
+                    </defs>
+                </svg></a>
             </div>
         </div>
     </div>
 </footer>
 
 
-<!--
-<div class="calculate-contact-form__group mb-4 ">
-    <div class="calculate-contact-form__group-title">Ваши данные</div>
-    <div class="calculate-contact-form__field-group">
-        <input type="text" class="form-control calculate-contact-form__input"
-               id="calculate-contact-form-name" name="name" placeholder="Имя" required>
-        <span class="calculate-contact-form__icon calculate-contact-form__icon--name"></span>
-    </div>
-    <div class="calculate-contact-form__field-group">
-        <input type="tel" class="form-control calculate-contact-form__input"
-               id="calculate-contact-form-phone" name="phone" placeholder="Телефон" required>
-        <span class="calculate-contact-form__icon calculate-contact-form__icon--phone"></span>
-    </div>
-</div>
-
--->
-
-
 
 <!-- Модалка -->
+<div class="blur-overlay d-none"></div>
 <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content project-modal">
+            <img src="img/lego.png" alt="Lego" class="project-modal__lego">
             <button type="button" class="btn-close project-modal__close" data-bs-dismiss="modal" aria-label="Close"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16.5 1.5L1.5 16.5M1.5 1.5L16.5 16.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg></button>
@@ -1532,10 +1604,10 @@
                     <div class="mb-3">
                         <input type="tel" class="form-control phone-mask" placeholder="Телефон" required />
                     </div>
-                    <div class="form-check mb-3">
+                    <div class="form-check align-items-center mb-3">
                         <input class="form-check-input" type="checkbox" id="consent" checked required />
                         <label class="form-check-label" for="consent">
-                            Соглашение о предоставлении персональных данных
+                            Соглашение о предоставлении<br> персональных данных
                         </label>
                     </div>
                     <button type="submit" class="btn-orange w-100">Обсудить</button>
@@ -1549,6 +1621,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+
+    /*LazyLoad*/
+    const lazyLoadInstance = new LazyLoad({
+        elements_selector: ".lazy",
+        use_native: true
+    });
 
     /*HEADER SCROLL*/
     window.addEventListener('scroll', () => {
@@ -1865,6 +1943,22 @@
     });
 
     Inputmask("+7 (999) 999-99-99").mask(document.querySelectorAll(".phone-mask"));
+
+    document.querySelectorAll('.callback-project').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelector('.blur-overlay').classList.remove('d-none');
+            document.querySelector('.blur-overlay').classList.add('show');
+        });
+    });
+
+    document.querySelectorAll('.modal .btn-close, .modal .close').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelector('.blur-overlay').classList.remove('show');
+            setTimeout(() => {
+                document.querySelector('.blur-overlay').classList.add('d-none');
+            }, 300); // дождаться анимации
+        });
+    });
 
 
 

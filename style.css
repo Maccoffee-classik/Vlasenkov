@@ -83,6 +83,28 @@ body {
   width: 2px;
   background: rgba(255, 255, 255, 0.3);
 }
+.header .navbar-nav .dropdown-menu {
+  border: 2px solid #9788b5;
+  border-radius: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: #564871;
+}
+.header .navbar-nav .dropdown-menu li a {
+  font-size: 14px;
+  line-height: 120%;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  padding: 6px 19px;
+}
+.header .navbar-nav .dropdown-menu li a:hover {
+  background: #9788b5;
+}
+.header .navbar-nav .dropdown-menu li a:focus {
+  background: #9788b5;
+}
 .header .nav-item .nav-link {
   font-family: "Manrope", sans-serif;
   font-weight: 600;
@@ -96,6 +118,9 @@ body {
   color: #ff7346;
 }
 .header .nav-item .nav-link:active {
+  color: #ff7346;
+}
+.header .nav-item .nav-link:focus {
   color: #ff7346;
 }
 .header .header__menu-item:nth-child(2)::before {
@@ -546,6 +571,7 @@ body {
 /*workflow*/
 .workflow {
   font-family: "Unbounded", sans-serif;
+  overflow: hidden;
   padding: 100px 0;
   position: relative;
   z-index: 1;
@@ -559,8 +585,8 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  left: -50px;
-  right: -50px;
+  left: 0px;
+  right: 0px;
   bottom: 0;
   background: #f3edff;
   filter: blur(100px);
@@ -842,8 +868,8 @@ body {
   content: "";
   position: absolute;
   top: 40%;
-  left: -50px;
-  right: -50px;
+  left: 0px;
+  right: 0px;
   bottom: 20%;
   background: #f3edff;
   filter: blur(100px);
@@ -1005,8 +1031,8 @@ body {
   content: "";
   position: absolute;
   top: 0%;
-  left: -50px;
-  right: -50px;
+  left: 0px;
+  right: 0px;
   bottom: 0%;
   background: radial-gradient(41.86% 150.87% at 104% 96%, #beb2df 26.42%, #ff7346 48%, #ff7346 54.58%, #beb2df 73.08%, #42365a 100%);
   filter: blur(50px);
@@ -1494,8 +1520,8 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  left: -50px;
-  right: -50px;
+  left: 0px;
+  right: 0px;
   bottom: 0;
   background: #f3edff;
   filter: blur(100px);
@@ -1637,6 +1663,7 @@ body {
 
 /*FAQ*/
 .faq {
+  overflow: hidden;
   padding: 100px 0;
   font-family: "Unbounded", sans-serif;
   position: relative;
@@ -1646,8 +1673,8 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  left: -50px;
-  right: -50px;
+  left: 0px;
+  right: 0px;
   bottom: 10%;
   background: #f3edff;
   filter: blur(100px);
@@ -1911,8 +1938,8 @@ body {
   content: "";
   position: absolute;
   top: 20%;
-  left: -50px;
-  right: -50px;
+  left: 0px;
+  right: 0px;
   bottom: 20%;
   background: #e0d3fa;
   filter: blur(100px);
@@ -2221,6 +2248,7 @@ body {
   }
 }
 .footer__socials {
+  align-items: center;
   gap: 60px;
 }
 @media (max-width: 769px) {
@@ -2235,11 +2263,38 @@ body {
   font-size: 18px;
   text-decoration: none;
 }
-.footer__socials a:hover {
-  color: #ff6b3b;
+.footer__socials a svg path:hover {
+  fill: #ff7346 !important;
 }
 
 /*МОДАЛКА*/
+.blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 1040; /* ниже, чем модалка Bootstrap (1050) */
+  transition: opacity 0.3s ease;
+}
+
+.blur-overlay.show {
+  opacity: 1;
+  display: block;
+}
+
+.blur-overlay.d-none {
+  opacity: 0;
+  display: none;
+}
+
+.modal-backdrop.show {
+  backdrop-filter: none;
+  background-color: transparent;
+}
+
 .project-modal {
   border-radius: 40px;
   background-color: #42365a;
@@ -2247,12 +2302,22 @@ body {
   color: #fff;
   position: relative;
 }
+.project-modal__lego {
+  position: absolute;
+  width: 161px;
+  height: auto;
+  top: -56px;
+  right: 165px;
+  z-index: 2;
+  pointer-events: none;
+}
 .project-modal__close {
   position: absolute;
   top: 20px;
   right: 20px;
   background: none;
   color: #fff;
+  opacity: 100;
 }
 .project-modal__close:focus {
   box-shadow: none;
@@ -2261,7 +2326,7 @@ body {
   font-family: "Unbounded", sans-serif;
   font-weight: 400;
   margin-bottom: 30px;
-  font-size: 27px;
+  font-size: 30px;
   line-height: 120%;
   color: #9788b5;
 }
@@ -2303,7 +2368,11 @@ body {
   border-color: #ff7346;
 }
 .project-modal .form-check-label {
-  font-size: 14px;
+  margin-left: 12px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 120%;
   color: #fff;
 }
 
