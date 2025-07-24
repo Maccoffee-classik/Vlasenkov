@@ -1078,6 +1078,72 @@ body {
   text-align: left;
   height: 100%;
   max-width: 534px;
+  /*
+      &--highlighted {
+        position: relative;
+        background: radial-gradient(69.86% 112.87% at 100% 77%, #beb2df 20.42%, #ff7346 31%, #ff7346 50.58%, #beb2df 66.08%, #42365a 79%);
+        color: #fff;
+
+        .services__card-title,
+        .services__card-price
+         {
+
+          color: $color-white;
+        }
+        .services__card-list li {
+
+          font-family: $font-manrope;
+          font-weight: $font-manrope-regular;
+          font-size: 22px;
+          line-height: 120%;
+          position: relative;
+          margin-bottom: 24px;
+          color: $color-white;
+          padding-left: 42px;
+          align-items: center;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            background: url('img/services-check-2.svg') no-repeat center center;
+            background-size: contain;
+
+
+          }
+
+        }
+
+        .services__card-button {
+          margin-top: auto;
+          background: #fff;
+          color: $color-black-purple;
+        }
+
+        .services__card__arrow {
+          position: absolute;
+          width: 100px; // или нужный размер
+          height: auto;
+          bottom: -23px;
+          left: -60px;
+          z-index: 2;
+          pointer-events: none; // если не нужно, чтобы мешала клику
+          @media (max-width: 768px) {
+            bottom: 0px;
+            width: 68px;
+            left: 0px;
+          }
+        }
+
+
+
+
+      }
+    }
+  }*/
 }
 @media (max-width: 992px) {
   .services__card {
@@ -1182,42 +1248,29 @@ body {
   font-size: 20px;
   letter-spacing: 0.08em;
 }
-.services__card--highlighted {
+.services__card:hover {
   position: relative;
   background: radial-gradient(69.86% 112.87% at 100% 77%, #beb2df 20.42%, #ff7346 31%, #ff7346 50.58%, #beb2df 66.08%, #42365a 79%);
   color: #fff;
+  transition: background 0.3s ease;
 }
-.services__card--highlighted .services__card-title,
-.services__card--highlighted .services__card-price {
+.services__card:hover .services__card-title,
+.services__card:hover .services__card-price {
   color: #fff;
 }
-.services__card--highlighted .services__card-list li {
-  font-family: "Manrope", sans-serif;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 120%;
-  position: relative;
-  margin-bottom: 24px;
+.services__card:hover .services__card-list li {
   color: #fff;
-  padding-left: 42px;
-  align-items: center;
 }
-.services__card--highlighted .services__card-list li::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-  height: 30px;
+.services__card:hover .services__card-list li::before {
   background: url("img/services-check-2.svg") no-repeat center center;
   background-size: contain;
 }
-.services__card--highlighted .services__card-button {
-  margin-top: auto;
+.services__card:hover .services__card-button {
   background: #fff;
   color: #42365a;
 }
-.services__card--highlighted .services__card__arrow {
+.services__card:hover .services__card__arrow {
+  display: block;
   position: absolute;
   width: 100px;
   height: auto;
@@ -1227,11 +1280,14 @@ body {
   pointer-events: none;
 }
 @media (max-width: 768px) {
-  .services__card--highlighted .services__card__arrow {
+  .services__card:hover .services__card__arrow {
     bottom: 0px;
     width: 68px;
-    bottom: 0px;
+    left: 0px;
   }
+}
+.services__card__arrow {
+  display: none;
 }
 
 .services__card:hover .services__card__arrow {

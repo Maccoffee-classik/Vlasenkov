@@ -1159,7 +1159,7 @@ body {
 
 
     }
-
+/*
     &--highlighted {
       position: relative;
       background: radial-gradient(69.86% 112.87% at 100% 77%, #beb2df 20.42%, #ff7346 31%, #ff7346 50.58%, #beb2df 66.08%, #42365a 79%);
@@ -1215,13 +1215,62 @@ body {
         @media (max-width: 768px) {
           bottom: 0px;
           width: 68px;
-          bottom: 0px;
+          left: 0px;
         }
       }
 
 
 
 
+    }
+  }
+}*/
+    &:hover {
+      position: relative;
+      background: radial-gradient(69.86% 112.87% at 100% 77%, #beb2df 20.42%, #ff7346 31%, #ff7346 50.58%, #beb2df 66.08%, #42365a 79%);
+      color: #fff;
+      transition: background 0.3s ease;
+
+      .services__card-title,
+      .services__card-price {
+        color: $color-white;
+      }
+
+      .services__card-list li {
+        color: $color-white;
+
+        &::before {
+          background: url('img/services-check-2.svg') no-repeat center center;
+          background-size: contain;
+        }
+      }
+
+      .services__card-button {
+        background: #fff;
+        color: $color-black-purple;
+      }
+
+      .services__card__arrow {
+        display: block;
+        position: absolute;
+        width: 100px;
+        height: auto;
+        bottom: -23px;
+        left: -60px;
+        z-index: 2;
+        pointer-events: none;
+
+        @media (max-width: 768px) {
+          bottom: 0px;
+          width: 68px;
+          left: 0px;
+        }
+      }
+    }
+
+    // По умолчанию стрелка скрыта
+    &__arrow {
+      display: none;
     }
   }
 }
