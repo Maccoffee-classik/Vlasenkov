@@ -27,9 +27,18 @@ $font-noticia-text-bold: 700;
   --bs-gutter-y: 4rem;
 }
 
+
 .g-6, .gx-6 {
   --bs-gutter-x: 4rem;
 }
+.sites .g-6 {
+  @media (max-width: 992px) {
+    --bs-gutter-x: 2rem!important;
+    --bs-gutter-y: 2rem!important;
+  }
+
+}
+
 .g-8, .gy-8{
   --bs-gutter-y: 8rem;
 }
@@ -591,7 +600,6 @@ body {
     @media (max-width: 992px) {
       font-size: 16px;
       margin-left: 110px;
-
     }
   }
 }
@@ -608,6 +616,10 @@ body {
     font-size: 44px;
     line-height: 100%;
     margin-bottom: 30px;
+    @media (max-width: 992px) {
+      font-size: 33px;
+      margin-bottom: 24px;
+    }
   }
   &__subtitle {
     font-family: $font-manrope;
@@ -616,6 +628,10 @@ body {
     font-size: 24px;
     line-height: 100%;
     margin-bottom: 83px;
+    @media (max-width: 992px) {
+      font-size: 18px;
+      margin-bottom: 36px;
+    }
   }
   &__card {
     position: relative;
@@ -660,6 +676,9 @@ body {
     font-weight: 500;
     font-size: 30px;
     line-height: 100%;
+    @media (max-width: 992px) {
+      font-size: 24px;
+    }
   }
   &__card-text {
     font-family: $font-manrope;
@@ -667,6 +686,9 @@ body {
     font-size: 20px;
     line-height: 120%;
     color: $color-black;
+    @media (max-width: 992px) {
+      font-size: 16px;
+    }
   }
   &__cta {
     display: flex;
@@ -1005,6 +1027,11 @@ body {
     color: $color-black-purple;
     text-align: left;
     margin-bottom: 35px;
+    @media (max-width: 992px) {
+      font-size: 33px;
+      margin-bottom: 24px;
+
+    }
 
   }
 
@@ -1014,18 +1041,30 @@ body {
     display: flex;
     justify-content: start;
     margin-bottom: 1.5rem;
+    @media (max-width: 500px) {
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
   }
   &__tab {
     font-weight: $font-manrope-semibold;
     background: #f3edff;
     padding: 12px 24px;
     border: none;
+    font-size: 16px;
+    letter-spacing: 0.08em;
     color: $color-black-purple;
     text-transform: uppercase;
     cursor: pointer;
     transition: background 0.3s;
     border-radius: 8px;
     margin-right: 13px;
+    @media (max-width: 992px) {
+      font-size: 14px;
+      padding: 10px 12px;
+      background:$color-white;
+    }
 
 
     &:hover {
@@ -1054,6 +1093,10 @@ body {
         background: #f3edff;
         filter: blur(100px);
         z-index: -1;
+        @media (max-width: 992px) {
+          top: 0;
+          bottom: 0;
+        }
       }// отображаем только активный таб
     }
   }
@@ -1069,7 +1112,11 @@ body {
 
   &__slide {
 
+
     text-align: center;
+    @media (max-width: 768px) {
+     max-width: 310px;
+    }
     // Можно задать max-width для слайда, либо он будет авто (Swiper распределит по slidesPerView)
   }
   &__image {
@@ -1088,6 +1135,9 @@ body {
     line-height: 120%;
     color: $color-black-purple;
     text-align: left;
+    @media (max-width: 992px) {
+      font-size: 24px;
+    }
   }
 }
 
@@ -1149,6 +1199,8 @@ body {
   border-radius: 100px!important;
   width: 32px!important;
   height: 8px!important;
+  opacity: 100 !important;
+  background:$color-white!important;
 }
 .swiper-pagination-bullet-active {
   background: $color-black-purple!important;
@@ -1258,6 +1310,10 @@ body {
     color: $color-white;
     text-align: left;
     margin-bottom: 68px;
+    @media (max-width: 992px) {
+      font-size: 33px;
+      margin-bottom: 36px;
+    }
 
   }
 
@@ -1276,6 +1332,11 @@ body {
     padding: 40px 40px;
     border-radius: 40px;
     text-align: left;
+    @media (max-width: 992px) {
+      margin-bottom: 24px;
+      padding: 30px 30px 40px 30px;
+      max-width: 310px;
+    }
    /* &:hover{
       background:  radial-gradient(163.86% 91.87% at 100% 100%, #beb2df 16.42%, #ff7346 35%, #ff7346 54.58%, #beb2df 73.08%, #9788b5 100%);;
       .review-slider__title {
@@ -1289,6 +1350,9 @@ body {
       display: flex;
       align-items: flex-start;
       flex-wrap: wrap;
+      @media (max-width: 992px) {
+        flex-direction: column;
+      }
     }
     .review-slider__logo {
       display: flex;
@@ -1305,10 +1369,18 @@ body {
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      @media (max-width: 992px) {
+        width: 36px;
+        height: 36px;
+      }
     }
     .review-slider__icon {
       width: 26px;
       height: 26px;
+      @media (max-width: 992px) {
+        width: 22px;
+        height: 22px;
+      }
     }
     .review-slider__company-name{
       font-family: $font-onest;
@@ -1319,6 +1391,10 @@ body {
       text-align: left;
       margin-bottom: 0;
       margin-left: 15px;
+      @media (max-width: 992px) {
+        font-size: 18px;
+        margin-left: 8px;
+      }
     }
     .review-slider__company-name.text-notica {
       font-family: $font-noticia-text;
@@ -1337,6 +1413,10 @@ body {
 
       color: #42365a;
       margin: 0px 0 20px;
+      @media (max-width: 992px) {
+        margin-top: 30px;
+        margin-bottom: 14px;
+      }
     }
     .review-slider__text {
       text-align: left;
@@ -1363,6 +1443,10 @@ body {
       border-radius: 8px;
       padding: 8px 16px;
       text-transform: uppercase;
+      @media (max-width: 992px) {
+        border-radius: 12px;
+        padding: 8px 25px;
+      }
 
       &:hover {
         background-color: #e0d6ff;
@@ -1371,6 +1455,11 @@ body {
       &-icon {
         width: 20px;
         height: 20px;
+        @media (max-width: 992px) {
+          width: 30px;
+          height: 30px;
+
+        }
       }
 
     }
@@ -1450,6 +1539,10 @@ body {
     color: #42365a;
     text-align: left;
     margin-bottom: 100px;
+    @media (max-width: 992px) {
+      font-size: 33px;
+      margin-bottom: 66px;
+    }
 
   }
   &__item {
@@ -1463,6 +1556,9 @@ body {
 /*TEAM-SLIDER*/
 .team-slider {
   padding: 80px 0 100px;
+  @media (max-width: 992px) {
+    padding: 60px 0 50px;
+  }
 
 
   /* The .container class from Bootstrap centers this block and limits width to 1320px on xxl screens */
@@ -1470,6 +1566,9 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 68px;
+    @media (max-width: 992px) {
+      margin-bottom: 30px;
+    }
   }
 
 
@@ -1481,6 +1580,9 @@ body {
     line-height: 120%;
     color: $color-black-purple;
     text-align: left;
+    @media (max-width: 992px) {
+      font-size: 33px;
+    }
 
   }
   &__badge {
@@ -1496,6 +1598,10 @@ body {
     background-color: #3d2c5d;
     line-height: 1.2;
     margin-left: 40px;
+    @media (max-width: 992px) {
+      font-size: 18px;
+      padding: 5px 8px;
+    }
   }
   &__swiper {
     width: 100%;
@@ -1512,9 +1618,15 @@ body {
     padding: 40px 30px;
     border-radius: 40px;
     text-align: center;
+    @media (max-width: 992px) {
+      width: 310px;
+      margin-bottom: 24px;
+    }
+
     &:hover{
       background:  radial-gradient(163.86% 91.87% at 100% 100%, #beb2df 16.42%, #ff7346 35%, #ff7346 54.58%, #beb2df 73.08%, #9788b5 100%);;
       .team-slider__title {
+
         color: $color-white;
       }
       .team-slider__excerpt {
@@ -1532,12 +1644,12 @@ body {
       font-weight: $font-unbounded-regular;
       font-size: 27px;
       line-height: 120%;
-      text-align: center;
+      text-align: left;
       color: #42365a;
       margin: 30px 0 20px;
     }
     .team-slider__excerpt {
-      text-align: center;
+      text-align: left;
       font-family: $font-unbounded;
       font-weight: $font-unbounded-regular;
       font-size: 18px;
@@ -1548,6 +1660,16 @@ body {
   }
   &__pagination {
     text-align: left;
+    .swiper-pagination-bullet {
+      border-radius: 100px!important;
+      width: 32px!important;
+      height: 8px!important;
+      opacity: 100 !important;
+      background:#f3edff!important;
+    }
+    .swiper-pagination-bullet-active {
+      background: $color-black-purple!important;
+    }
   }
 }
 
@@ -1612,6 +1734,9 @@ body {
 /*CERTIFICATE-SLIDER*/
 .certificate-slider {
   padding: 80px 0 100px;
+  @media (max-width: 992px) {
+    padding: 50px 0 20px;
+  }
 
 
   /* The .container class from Bootstrap centers this block and limits width to 1320px on xxl screens */
@@ -1619,6 +1744,9 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 68px;
+    @media (max-width: 992px) {
+      margin-bottom: 30px;
+    }
   }
 
 
@@ -1630,6 +1758,9 @@ body {
     line-height: 120%;
     color: $color-black-purple;
     text-align: left;
+    @media (max-width: 992px) {
+      font-size: 33px;
+    }
 
   }
   &__badge {
@@ -1645,6 +1776,10 @@ body {
     background-color: #3d2c5d;
     line-height: 1.2;
     margin-left: 40px;
+    @media (max-width: 992px) {
+      font-size: 18px;
+      padding: 5px 8px;
+    }
   }
   &__swiper {
     width: 100%;
@@ -1661,6 +1796,10 @@ body {
     padding: 40px 30px;
     border-radius: 40px;
     text-align: center;
+    @media (max-width: 992px) {
+      width: 310px;
+      margin-bottom: 24px;
+    }
     &:hover{
       background:  radial-gradient(163.86% 91.87% at 100% 100%, #beb2df 16.42%, #ff7346 35%, #ff7346 54.58%, #beb2df 73.08%, #9788b5 100%);;
       .certificate-slider__title {
@@ -1686,6 +1825,16 @@ body {
   }
   &__pagination {
     text-align: left;
+    .swiper-pagination-bullet {
+      border-radius: 100px!important;
+      width: 32px!important;
+      height: 8px!important;
+      opacity: 100 !important;
+      background:#f3edff!important;
+    }
+    .swiper-pagination-bullet-active {
+      background: $color-black-purple!important;
+    }
   }
 }
 
@@ -1750,6 +1899,10 @@ body {
 .why-us {
 
   padding: 80px 0;
+  @media (max-width: 992px) {
+    padding: 80px 0 50px;
+  }
+
 
   &__title {
     font-family: $font-unbounded;
@@ -1791,6 +1944,9 @@ body {
   padding: 270px 0 240px;
   position: relative;
   z-index: 1;
+  @media (max-width: 992px) {
+    padding: 104px 0 53px;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -1806,13 +1962,30 @@ body {
     max-width: 395px;
     height: auto;
     margin-left: -127px;
+    @media (max-width: 992px) {
+      max-width: 197px;
+      margin: -60px auto;
+      position: relative;
+      z-index: 2;
+    }
 
+
+
+
+  }
+  .row.align-items-center {
+    @media (max-width: 992px) {
+      padding-right: 5%;
+    }
   }
   &__wrapper {
     background-color: $color-black-purple;
     position: relative;
     border-radius: 0 40px 40px 0;
     padding: 85px 85px 150px 0;
+    @media (max-width: 992px) {
+      padding: 93px 20px 110px 0;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -1822,6 +1995,9 @@ body {
       width: 100vw;
       background: $color-black-purple;
       z-index: -1;
+      @media (max-width: 992px) {
+        left: -99vw;
+      }
     }
   }
 
@@ -1832,6 +2008,10 @@ body {
     font-size: 36px;
     line-height: 120%;
     color: $color-white;
+    @media (max-width: 992px) {
+      font-size: 33px;
+      margin-bottom: 65px;
+    }
   }
 
   &__group-title {
@@ -1879,6 +2059,12 @@ body {
       background-color: $color-orange;
       border-color: $color-orange;
     }
+  }
+  .row .col-lg-6:nth-of-type(2) .calculate-contact-form__group {
+    @media (max-width: 992px) {
+      margin-top: 65px;
+    }
+
   }
   .form-check-input:checked[type=radio] {
     --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
@@ -1965,6 +2151,9 @@ body {
   font-family: $font-unbounded;
   position: relative;
   z-index: 1;
+  @media (max-width: 992px) {
+    padding: 129px 0 120px;
+  }
     &::before {
       content: "";
       position: absolute;
@@ -1975,11 +2164,22 @@ body {
       background: #f3edff;
       filter: blur(100px);
       z-index: -1;
+      @media (max-width: 992px) {
+        top:  6%;
+        bottom: 6%;
+      }
     }
   &__image {
     max-width: 260px;
     height: auto;
     padding-left: 65px;
+    @media (max-width: 992px) {
+      padding-left: 0px;
+      max-width: 159px;
+      margin: -103px auto;
+      position: relative;
+      z-index: 2;
+    }
 
   }
 
@@ -1990,6 +2190,10 @@ body {
     padding: 85px 0 99px 85px;
     height: 100%;
     position: relative;
+    @media (max-width: 992px) {
+      border-radius: 0 40px 40px 0;
+      padding: 176px 20px 68px 0;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -1999,15 +2203,22 @@ body {
       width: 100vw;
       background: #fff;
       z-index: 0;
+      @media (max-width: 992px) {
+        left: -100vw;
+        right: 0;
+      }
     }
   }
 
   &__title {
     font-weight: $font-unbounded-medium;
-    margin-bottom: 42px;
+    margin-bottom: 39px;
     color: $color-black-purple;
-    font-size: 30px;
+    font-size: 44px;
     line-height: 120%;
+    @media (max-width: 992px) {
+      font-size: 33px;
+    }
 
   }
 
@@ -2026,6 +2237,11 @@ body {
     box-shadow: none;
     padding: 30px 20px;
     color: #2e254d;
+    @media (max-width: 992px) {
+      font-size: 24px;
+      flex-direction: column;
+      text-align: left;
+    }
 
     &::after {
       display: none;
@@ -2039,6 +2255,9 @@ body {
     margin-right: 20px;
     background-repeat: no-repeat;
     background-size: contain;
+    @media (max-width: 992px) {
+      margin-right: auto;
+    }
 
     &--plus {
       background-image: url('img/plus.svg');
@@ -2055,15 +2274,21 @@ body {
     background-color: #392c55;
     color: #fff;
     border-radius:  0 0 40px 40px;
-    padding:0 20px 30px 105px;
+    padding:20px 20px 30px 105px;
     font-size: 20px;
     line-height: 120%;
     color: #fff;
     margin-top: -1px;
+    @media (max-width: 992px) {
+      padding: 20px;
+      font-size: 16px;
+    }
     p {
       position: relative;
       margin-top: 0px;
       z-index: 3;
+
+
 
     }
   }
@@ -2102,6 +2327,9 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 68px;
+    @media (max-width: 992px) {
+      margin-bottom:36px;
+    }
   }
 
 
@@ -2113,6 +2341,11 @@ body {
     line-height: 120%;
     color: $color-black-purple;
     text-align: left;
+    @media (max-width: 992px) {
+      font-size: 33px;
+      text-transform: capitalize;
+
+    }
 
   }
   &__badge {
@@ -2128,6 +2361,10 @@ body {
     background-color: #3d2c5d;
     line-height: 1.2;
     margin-left: 40px;
+    @media (max-width: 992px) {
+      font-size: 18px;
+      padding: 5px 8px;
+    }
   }
   &__swiper {
     width: 100%;
@@ -2144,6 +2381,10 @@ body {
     padding: 40px 30px;
     border-radius: 40px;
     text-align: center;
+    @media (max-width: 992px) {
+      width: 310px;
+      margin-bottom: 24px;
+    }
     &:hover{
       background: radial-gradient(77.86% 137.87% at 105% 81%, #f3edff 17.08%, #ff7346 29.16%, #beb2df 49.22%, #f3edff 80.75%);
     }
@@ -2188,6 +2429,16 @@ body {
   }
   &__pagination {
     text-align: left;
+    .swiper-pagination-bullet {
+      border-radius: 100px!important;
+      width: 32px!important;
+      height: 8px!important;
+      opacity: 100 !important;
+      background:#f3edff!important;
+    }
+    .swiper-pagination-bullet-active {
+      background: $color-black-purple!important;
+    }
   }
 }
 
@@ -2255,6 +2506,9 @@ body {
   font-family: $font-manrope;
 
   padding: 188px 0;
+  @media (max-width: 992px) {
+    padding: 104px 0 163px;
+  }
 
   position: relative;
   z-index: 1;
@@ -2268,9 +2522,16 @@ body {
     background: #e0d3fa;
     filter: blur(100px);
     z-index: -1;
+    @media (max-width: 992px) {
+      top: 6%;
+      bottom: 13%;
+    }
   }
   &__container {
     padding: 0;
+    @media (max-width: 992px) {
+      padding-right: 5%;
+    }
 
 
 
@@ -2283,7 +2544,7 @@ body {
     padding: 90px 110px;
     margin-left: 0;
     @media (max-width: 992px) {
-      padding: 153px 20px 40px;
+      padding: 153px 20px 139px;
       border-radius: 0 40px 40px 0;
       &::before {
         content: '';
@@ -2305,6 +2566,11 @@ body {
     right: 110px;
     z-index: 2;
     pointer-events: none; // если не нужно, чтобы мешала клику
+    @media (max-width: 992px) {
+      width: 185px;
+      top: -60px;
+    }
+
   }
 
   &__title {
@@ -2370,6 +2636,9 @@ body {
     align-items: flex-start;
     font-size: 18px;
     margin-top: 10px;
+    @media (max-width: 992px) {
+      margin-bottom: 57px;
+    }
 
     .form-check-input {
       background-color: #564871;
