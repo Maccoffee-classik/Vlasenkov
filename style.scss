@@ -131,12 +131,22 @@ body {
     padding: 0rem 0;
   }
   .navbar-nav {
+
+
     position: relative;
     padding-left: 32px;
     padding-right: 32px;
     margin-right: 32px;
     margin-left: 32px;
     gap: 30px;
+    @media (max-width: 992px) {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      padding-left: 50px;
+      padding-right: 0;
+      margin-right: 0;
+
+    }
     &::before {
       content: "";
       position: absolute;
@@ -146,6 +156,9 @@ body {
       height: 18px;
       width: 2px;
       background: rgba(255, 255, 255, 0.3);
+      @media (max-width: 992px) {
+        background: transparent;
+      }
     }
     &::after {
       content: "";
@@ -156,6 +169,9 @@ body {
       height: 18px;
       width: 2px;
       background: rgba(255, 255, 255, 0.3);
+      @media (max-width: 992px) {
+        background: transparent;
+      }
     }
     .dropdown-menu {
       border: 2px solid #9788b5;
@@ -192,6 +208,12 @@ body {
     font-size: 14px;
     letter-spacing: 0.08em;
     padding: 0;
+    @media (max-width: 992px) {
+     text-transform: capitalize!important;
+      font-size: 33px;
+      font-family: $font-unbounded;
+      font-weight: $font-unbounded-light;
+    }
     &:hover {
       color: $color-orange;
     }
@@ -221,6 +243,33 @@ body {
 
 
 }
+.navbar-collapse.collapse.show {
+  height: 100vh;
+}
+.dropdown-toggle::after {
+  background: transparent;
+  content: none;
+}
+.navbar-toggler {
+  border: none;
+  &:focus {
+    box-shadow: none!important;
+  }
+}
+.header .navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-image: url("img/toggler-icon-bg.svg") !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+}
+.header.opened-bg .navbar-toggler-icon {
+  background-image: url("img/toggler-icon-bg-close.svg") !important;
+}
 .header__logo  {
   font-family: $font-unbounded;
   font-weight: $font-unbounded-black;
@@ -238,6 +287,9 @@ body {
 }
 .header__contacts {
   gap: 32px;
+  @media (max-width: 992px) {
+    margin-left: 80px;
+  }
 
 }
 .header__contact-phone,
@@ -246,8 +298,16 @@ body {
   font-weight: $font-manrope-semibold;
   color: $color-white;
   font-size: 14px;
+  @media (max-width: 992px) {
+    font-size: 20px;
+    line-height: 120%;
+    color: #9788b5;
+  }
   svg {
     margin-right: 6px;
+    @media (max-width: 992px) {
+     display: none;
+    }
   }
 
 }
@@ -255,6 +315,7 @@ body {
   @media (max-width: 992px) {
     margin-left: 1rem;
     margin-bottom: 0;
+
   }
 }
 .header__contact-phone:hover,
@@ -297,6 +358,13 @@ body {
     }
   }
 
+}
+.header {
+  transition: background-color 0.3s;
+}
+
+.header.opened-bg {
+  background-color: #42365a;
 }
 
 
@@ -654,7 +722,16 @@ body {
     bottom: -30px;
     left: 99px;
     z-index: 2;
-    pointer-events: none; // если не нужно, чтобы мешала клику
+    pointer-events: none;
+    @media (max-width: 992px) {
+      width: 54px;
+      height: auto;
+      bottom: 0;
+      top: 100px;
+      left: 20px;
+    }
+
+
   }
   &__icon {
     width: 55%;
@@ -664,6 +741,9 @@ body {
     margin-bottom: 20px;
     padding: 30px 0;
     text-align: center;
+    @media (max-width: 992px) {
+      width: 100%;
+    }
     img {
       width: 110px;
       height: 110px;
@@ -704,10 +784,23 @@ body {
     height: 100%;
     padding: 30px;
     text-decoration: none;
+    @media (max-width: 992px) {
+      margin-top: 36px;
+      padding: 18px 66px;
+      flex-direction:row;
+      border-radius: 12px;
+      background: radial-gradient(96.87% 98.23% at 100% 100%, #beb2df 16.42%, #ff7346 35%, #ff7346 54.58%, #beb2df 73.08%, #42365a 100%);
+    }
     img {
       width: 110px;
       height: 110px;
       margin-bottom: 15px;
+      @media (max-width: 992px) {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0px;
+        margin-right: 20px;
+      }
     }
     span {
       font-weight: $font-unbounded-medium;
@@ -715,6 +808,10 @@ body {
       line-height: 120%;
       text-align: center;
       color: $color-white;
+      @media (max-width: 992px) {
+        font-size: 24px;
+        text-align: left;
+      }
 
     }
     &:hover {
@@ -723,6 +820,22 @@ body {
 
 
   }
+
+
+}
+
+.slider-cards-js-pagination {
+  .swiper-pagination-bullet {
+    border-radius: 100px!important;
+    width: 32px!important;
+    height: 8px!important;
+    opacity: 100 !important;
+    background:#f3edff!important;
+  }
+  .swiper-pagination-bullet-active {
+    background: $color-black-purple!important;
+  }
+
 }
 /*workflow*/
 .workflow {
@@ -732,10 +845,19 @@ body {
   padding: 100px 0;
   position: relative;
   z-index: 1;
+  .container {
+    padding-right: 0;
+  }
   &__image {
     max-width: 349px;
     height: auto;
     padding-right: 62px;
+    @media (max-width: 992px) {
+      max-width: 160px;
+      margin: -85px auto;
+      margin-left: 40%;
+      padding-right: 0px;
+    }
 
   }
 
@@ -749,6 +871,11 @@ body {
     background: #f3edff;
     filter: blur(100px);
     z-index: -1;
+    @media (max-width: 992px) {
+      top:4%;
+      bottom:4%;
+      filter: blur(24px);
+    }
   }
 
   &__card {
@@ -758,7 +885,21 @@ body {
     padding: 85px 0 99px 85px;
     height: 100%;
     position: relative;
-    &::after {
+    @media (max-width: 992px) {
+      border-radius: 0 40px 40px 0;
+      padding: 120px 0px  85px 0px;
+    }
+    ul {
+      @media (max-width: 992px) {
+        padding-left: 0;
+
+      }
+      li {
+
+      }
+
+    }
+    &:after {
       content: '';
       position: absolute;
       top: 0;
@@ -767,6 +908,10 @@ body {
       width: 100vw;
       background: #fff;
       z-index: 0;
+      @media (max-width: 992px) {
+        right: 0;
+        left: -100vw;
+      }
     }
   }
 
@@ -776,6 +921,10 @@ body {
     margin-bottom: 39px;
     font-size: 44px;
     line-height: 100%;
+    @media (max-width: 992px) {
+      font-size: 33px;
+      margin-bottom: 30px;
+    }
 
   }
 
@@ -794,6 +943,11 @@ body {
     background: #f3edff;
     border-radius: 40px;
     padding: 40px 20px;
+    @media (max-width: 992px) {
+      padding: 30px 20px 20px;
+      min-height: 340px;
+      width: 310px!important;
+    }
     &:nth-child(2),
     &:nth-child(4) {
       margin-left: auto;
@@ -813,6 +967,10 @@ body {
     align-items: center;
     justify-content: center;
     margin-right: 32px;
+    @media (max-width: 992px) {
+      width: 87px;
+      height: 87px;
+    }
   }
   &__step-number {
     font-weight:$font-unbounded-medium;
@@ -820,6 +978,9 @@ body {
     font-size: 44px;
     line-height: 120%;
     text-align: center;
+    @media (max-width: 992px) {
+      font-size: 36px;
+    }
   }
 
   &__content {
@@ -832,6 +993,9 @@ body {
     margin-bottom: 8px;
     font-size: 30px;
     line-height: 120%;
+    @media (max-width: 992px) {
+      font-size: 24px;
+    }
   }
 
   &__item-text {
@@ -841,8 +1005,26 @@ body {
     font-size: 20px;
     line-height: 120%;
     color: $color-black;
+    @media (max-width: 992px) {
+      font-size: 16px;
+    }
   }
 }
+.workflow-slider-pagination {
+  .swiper-pagination-bullet {
+    border-radius: 100px!important;
+    width: 32px!important;
+    height: 8px!important;
+    opacity: 100 !important;
+    background:#f3edff!important;
+  }
+  .swiper-pagination-bullet-active {
+    background: $color-black-purple!important;
+  }
+
+}
+
+
 /*SERVICES*/
 
 .services {
@@ -858,6 +1040,10 @@ body {
     margin-bottom: 100px;
     font-size: 44px;
     line-height: 100%;
+    @media (max-width: 992px) {
+      font-size: 33px;
+      margin-bottom:36px;
+    }
   }
 
   &__card {
@@ -870,12 +1056,24 @@ body {
     text-align: left;
     height: 100%;
     max-width: 534px;
+    @media (max-width: 992px) {
+      padding: 20px ;
+      min-height: 680px;
+    }
+    @media (max-width: 768px) {
+      min-height: 780px;
+      margin-bottom: 24px;
+    }
     &-title {
       font-weight:$font-unbounded-medium;
       margin-bottom: 30px;
       font-size: 30px;
       line-height: 100%;
       color: $color-black-purple;
+      @media (max-width: 992px) {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
     }
 
     &-price {
@@ -884,6 +1082,11 @@ body {
       font-size: 30px;
       line-height: 120%;
       color: $color-black-purple;
+      @media (max-width: 992px) {
+        font-size: 24px;
+      }
+
+
     }
 
     &-image {
@@ -894,6 +1097,10 @@ body {
       margin-bottom: 20px;
       padding: 30px 0;
       text-align: center;
+      @media (max-width: 992px) {
+        width: 100%;
+        margin-bottom: 30px;
+      }
       img {
         width: 110px;
         height: 110px;
@@ -915,6 +1122,9 @@ body {
         color: $color-black;
         padding-left: 42px;
         align-items: center;
+        @media (max-width: 992px) {
+          font-size: 20px;
+        }
 
         &::before {
           content: '';
@@ -1002,13 +1212,38 @@ body {
         left: -60px;
         z-index: 2;
         pointer-events: none; // если не нужно, чтобы мешала клику
+        @media (max-width: 768px) {
+          bottom: 0px;
+          width: 68px;
+          bottom: 0px;
+        }
       }
+
+
 
 
     }
   }
 }
 
+
+.services__card:hover .services__card__arrow {
+  display: block !important;
+}
+
+.services-slider-pagination {
+  .swiper-pagination-bullet {
+    border-radius: 100px !important;
+    width: 32px !important;
+    height: 8px !important;
+    opacity: 100 !important;
+    background: #f3edff !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $color-black-purple !important;
+  }
+}
 /*WORKS*/
 
 .works {
@@ -1017,6 +1252,9 @@ body {
   position: relative;
   z-index: 1;
   background: transparent;
+  @media (max-width: 992px) {
+    padding: 74px 0 100px;
+  }
 
 
 
@@ -1480,7 +1718,7 @@ body {
 .review-slider__nav {
   display: flex;
   gap: 60px;
-  top: -98px;
+  top: -106px;
   right: 0;
   @media (max-width: 768px) {
     display: none;
@@ -1624,7 +1862,8 @@ body {
     }
 
     &:hover{
-      background:  radial-gradient(163.86% 91.87% at 100% 100%, #beb2df 16.42%, #ff7346 35%, #ff7346 54.58%, #beb2df 73.08%, #9788b5 100%);;
+      background:  radial-gradient(101.86% 149.87% at 115% 110%, #beb2df 36.42%, #ff7346 49%, #ff7346 54.58%, #beb2df 73.08%, #9788b5 100%);
+
       .team-slider__title {
 
         color: $color-white;
@@ -1683,7 +1922,7 @@ body {
 .team-slider__nav {
   display: flex;
   gap: 60px;
-  top: -99px;
+  top: -110px;
   right: 0;
   @media (max-width: 768px) {
     display: none;
@@ -1733,7 +1972,7 @@ body {
 
 /*CERTIFICATE-SLIDER*/
 .certificate-slider {
-  padding: 80px 0 100px;
+  padding: 20px 0 36px;
   @media (max-width: 992px) {
     padding: 50px 0 20px;
   }
@@ -1801,7 +2040,7 @@ body {
       margin-bottom: 24px;
     }
     &:hover{
-      background:  radial-gradient(163.86% 91.87% at 100% 100%, #beb2df 16.42%, #ff7346 35%, #ff7346 54.58%, #beb2df 73.08%, #9788b5 100%);;
+      background:  radial-gradient(101.86% 149.87% at 115% 110%, #beb2df 36.42%, #ff7346 49%, #ff7346 54.58%, #beb2df 73.08%, #9788b5 100%);
       .certificate-slider__title {
         color: $color-white;
       }
@@ -1848,7 +2087,7 @@ body {
 .certificate-slider__nav {
   display: flex;
   gap: 60px;
-  top: -99px;
+  top: -110px;
   right: 0;
   @media (max-width: 768px) {
     display: none;
@@ -1941,7 +2180,7 @@ body {
 
 .calculate-contact-form {
   font-family: $font-unbounded;
-  padding: 270px 0 240px;
+  padding: 170px 0 160px;
   position: relative;
   z-index: 1;
   @media (max-width: 992px) {
@@ -2452,7 +2691,7 @@ body {
 .article-slider__nav {
   display: flex;
   gap: 60px;
-  top: -99px;
+  top: -110px;
   right: 0;
   @media (max-width: 768px) {
     display: none;
@@ -2930,12 +3169,30 @@ body {
   backdrop-filter: none;
   background-color: transparent; // полупрозрачный светлый фон
 }
+
+#projectModal .modal-dialog {
+  @media (max-width: 577px) {
+    margin: 0;
+  }
+
+}
 .project-modal {
   border-radius: 40px;
   background-color: #42365a;
   padding: 100px 50px;
   color: #fff;
   position: relative;
+  @media (max-width: 992px) {
+    border-radius: 0;
+    max-width: 100%;
+    width: 100vw;
+    height: 100vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: center;
+  }
   &__lego {
     position: absolute;
     width: 161px; // или нужный размер
@@ -2944,7 +3201,16 @@ body {
     right: 165px;
     z-index: 2;
     pointer-events: none; // если не нужно, чтобы мешала клику
+    @media (max-width: 992px) {
+
+      top: 25px;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
   }
+
 
   &__close {
     position: absolute;
@@ -2953,6 +3219,18 @@ body {
     background: none;
     color: $color-white;
     opacity: 100;
+    @media (max-width: 992px) {
+      top: 16px;
+      right: 16px;
+      background: transparent url("img/toggler-icon-bg-close.svg") no-repeat center center !important;
+      background-size: 100%;
+      color: transparent;
+      border: none;
+      font-size: 32px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
     &:focus {
       box-shadow: none;
     }
@@ -2965,6 +3243,9 @@ body {
     font-size: 30px;
     line-height: 120%;
     color: $color-light-purple;
+    @media (max-width: 992px) {
+      margin-top: 49px;
+    }
   }
 
   .form-control {
@@ -3018,4 +3299,135 @@ body {
     color:$color-white;
   }
 
+}
+/*МОДАЛКА2*/
+.certificate-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.certificate-modal.active {
+  display: flex;
+}
+
+.certificate-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+}
+
+.certificate-modal__content {
+  position: relative;
+  background: #42365a;
+  border-radius: 40px;
+  padding: 50px;
+  max-width: 90%;
+  width: 560px;
+  text-align: center;
+  z-index: 10;
+  color: white;
+}
+
+.certificate-modal__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.certificate-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.certificate-modal__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/*МОДАЛКА3*/
+.review-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 1060;
+}
+
+.review-modal.active {
+  display: flex;
+}
+
+.review-modal__content {
+  position: relative;
+  background: #42365a;
+  border-radius: 40px;
+  padding:50px;
+  max-width: 90%;
+  width: 560px;
+  max-height: 820px;
+  text-align: center;
+  color: white;
+  @media (max-width: 992px) {
+    border-radius: 0;
+    max-width: 100%;
+    width: 100vw;
+    height: 100vh;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.review-modal__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  @media (max-width: 992px) {
+  margin-top: 30px;}
+}
+
+.review-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent url("img/toggler-icon-bg-close.svg") no-repeat center center !important;
+
+  background-size: 100%;
+
+  color: transparent;
+  border: none;
+
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.review-modal__title {
+  font-family: $font-unbounded;
+  font-weight:$font-unbounded-medium ;
+  margin: 0;
+  text-align: left;
+  font-size: 30px;
+  line-height: 120%;
+  color: #9788b5;
+  @media (max-width: 992px) {
+    font-size: 24px
+  }
 }
