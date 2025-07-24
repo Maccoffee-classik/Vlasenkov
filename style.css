@@ -80,7 +80,7 @@ body {
   background-size: cover;
   background-position: center center;*/
   color: #fff;
-  z-index: 1;
+  z-index: 99;
   position: relative;
   /*@media (max-width: 576px) {
     /*background: url("img/hero_bg-mob.png") no-repeat top center;*/
