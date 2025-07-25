@@ -154,6 +154,11 @@ body {
   padding-bottom: 8px;
   background: #564871;
 }
+@media (max-width: 992px) {
+  .header .navbar-nav .dropdown-menu {
+    display: none !important;
+  }
+}
 .header .navbar-nav .dropdown-menu li a {
   font-size: 14px;
   line-height: 120%;

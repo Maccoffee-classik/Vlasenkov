@@ -179,6 +179,9 @@ body {
       padding-top: 8px ;
       padding-bottom: 8px;
       background: #564871;
+      @media (max-width: 992px) {
+        display: none!important;
+      }
       li a {
         font-size: 14px;
         line-height: 120%;
