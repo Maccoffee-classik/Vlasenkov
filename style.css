@@ -75,39 +75,15 @@ body {
 
 .hero {
   padding-top: 90px;
-  /*background: url("img/hero_bg.png") no-repeat top center;
-  background: radial-gradient(88.86% 133.87% at 115% 91%, #beb2df 30.42%, #ff7346 49%, #ff7346 55.58%, #beb2df 70.08%, #42365a 86%)radial-gradient(88.86% 133.87% at 115% 91%, #beb2df 30.42%, #ff7346 49%, #ff7346 55.58%, #beb2df 70.08%, #42365a 86%);
-  background-size: cover;
-  background-position: center center;*/
-  color: #fff;
-  z-index: 99;
-  position: relative;
-  /*@media (max-width: 576px) {
-    /*background: url("img/hero_bg-mob.png") no-repeat top center;*/
-  /* background-size: cover;
-    background: radial-gradient(85.86% 31.87% at 101% 17%, #beb2df 14.42%, #ff7346 49%, #ff7346 54.58%, #beb2df 70.08%, #42365a 86%);
-
-  }*/
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0%;
-  left: 0px;
-  right: 0px;
-  bottom: 0%;
-  background: radial-gradient(88.86% 133.87% at 115% 91%, #beb2df 30.42%, #ff7346 49%, #ff7346 55.58%, #beb2df 70.08%, #42365a 86%);
+  background: url("img/hero_bg.png") no-repeat top center;
   background-size: cover;
   background-position: center center;
-  filter: blur(20px);
-  z-index: -1;
+  color: #fff;
 }
 @media (max-width: 576px) {
-  .hero::before {
-    /*background: url("img/hero_bg-mob.png") no-repeat top center;*/
+  .hero {
+    background: url("img/hero_bg-mob.png") no-repeat top center;
     background-size: cover;
-    filter: blur(20px);
-    background: radial-gradient(85.86% 31.87% at 101% 17%, #beb2df 14.42%, #ff7346 49%, #ff7346 54.58%, #beb2df 70.08%, #42365a 86%);
   }
 }
 
