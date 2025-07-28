@@ -1830,7 +1830,7 @@ body {
 
 /*BRANDS*/
 .brands {
-  padding: 139px 0 100px;
+  padding: 139px 0 0px;
 }
 .brands__title {
   font-family: "Unbounded", sans-serif;
