@@ -73,13 +73,13 @@ $font-noticia-text-bold: 700;
   }
   &:hover {
     border: 1px solid #bdb2d3;
-    background: radial-gradient(163.86% 91.87% at 100% 100%, #beb2df 16.42%, #ff7346 35%, #ff7346 54.58%, #beb2df 73.08%, #9788b5 100%);;
+    background:radial-gradient(139.86% 173.87% at 115% 111%, #beb2df 22.42%, #ff7346 35%, #ff7346 42.58%, #beb2df 60.08%, #9788b5 71%);
     box-shadow: 0 12px 12px 0 rgba(151, 136, 181, 0.3);
   }
   &:active {
     border: 1px solid #bdb2d3;
     box-shadow: 0 12px 12px 0 rgba(151, 136, 181, 0.3);
-    background: radial-gradient(254.86% 131.2% at 100% 100%, #beb2df 37.02%, #ff7346 85.58%, #beb2df 100%);
+    background: radial-gradient(156.86% 348.87% at 84% 98%, #beb2df 19.42%, #ff7346 46%, #ff7346 12.58%, #beb2df 53.08%, #9788D5 177%);
   }
   &:disabled {
     border: 1px solid #817697;
@@ -250,8 +250,9 @@ body {
   height: 100vh;
 }
 .dropdown-toggle::after {
+  @media (max-width: 992px) {
   background: transparent;
-  content: none;
+  content: none;}
 }
 .navbar-toggler {
   border: none;
@@ -818,7 +819,8 @@ body {
 
     }
     &:hover {
-      filter: brightness(1.2);
+      background: url("img/sites_cta_bg_hover.jpg") no-repeat top center;
+      background-size: cover;
     }
 
 
@@ -845,7 +847,7 @@ body {
   font-family: $font-unbounded;
   overflow: hidden;
 
-  padding: 100px 0;
+  padding: 100px 0 120px;
   position: relative;
   z-index: 1;
   .container {
@@ -867,10 +869,10 @@ body {
   &::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: 8%;
     left: 0px;
     right: 0px;
-    bottom: 0;
+    bottom: 8%;
     background: #f3edff;
     filter: blur(100px);
     z-index: -1;
@@ -953,7 +955,7 @@ body {
     }
     &:nth-child(2),
     &:nth-child(4) {
-      margin-left: auto;
+      margin-left: 8%;
     }
     &:nth-child(1),
     &:nth-child(3) {
@@ -1032,7 +1034,7 @@ body {
 
 .services {
   font-family: $font-unbounded;
-  padding: 0px 0;
+  padding: 86px 0 0;
   background: $color-white;
 
   &__title {
@@ -1309,7 +1311,6 @@ body {
   }
 
 
-
   &__title {
     font-weight: $font-unbounded-medium;
     font-size: 44px;
@@ -1337,6 +1338,7 @@ body {
     }
 
   }
+
   &__tab {
     font-weight: $font-manrope-semibold;
     background: #f3edff;
@@ -1353,7 +1355,7 @@ body {
     @media (max-width: 992px) {
       font-size: 14px;
       padding: 10px 12px;
-      background:$color-white;
+      background: $color-white;
     }
 
 
@@ -1361,18 +1363,20 @@ body {
       background: radial-gradient(93.86% 145.87% at 114% 108%, #beb2df 29.42%, #ff7346 56%, #ff7346 54.58%, #beb2df 73.08%, #9788b5 100%);
       color: $color-white;
     }
+
     &--active {
       background: $color-black-purple;
-      color: $color-white;     // активная вкладка, напр. синий фон (Bootstrap primary)
+      color: $color-white; // активная вкладка, напр. синий фон (Bootstrap primary)
 
     }
   }
 
   // Контейнеры содержимого вкладок
   &__tab-content {
-    display: none;                    // скрыто по умолчанию
+    display: none; // скрыто по умолчанию
     &--active {
       display: block;
+
       &::before {
         content: '';
         position: absolute;
@@ -1387,7 +1391,9 @@ body {
           top: 0;
           bottom: 0;
         }
-      }// отображаем только активный таб
+      }
+
+      // отображаем только активный таб
     }
   }
 
@@ -1401,36 +1407,75 @@ body {
 
 
   &__slide {
+    cursor: pointer;
+    text-align: left;
+    &:hover .works__caption {
+      background: radial-gradient(53.86% 158.87% at 112% 100%, rgb(190, 178, 223) 16.41%, rgb(255, 115, 70) 35%, rgb(255, 115, 70) 54.57%, rgb(190, 178, 223) 73.08%, rgb(151, 136, 181) 100%);
 
 
-    text-align: center;
-    @media (max-width: 768px) {
-     max-width: 310px;
+      animation: gradient-text 2s linear infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    // Можно задать max-width для слайда, либо он будет авто (Swiper распределит по slidesPerView)
-  }
-  &__image {
-    border-radius: 24px;
-    width: 100%;
-    height: auto;
-    display: block;
-    border: 1px solid #ddd;
 
+    @media (max-width: 768px) {
+      max-width: 310px;
+    }
+
+    &:hover .works__image-wrapper {
+      background: radial-gradient(
+                      163.86% 91.87% at 100% 100%,
+                      #beb2df 16.42%,
+                      #ff7346 35%,
+                      #ff7346 54.58%,
+                      #beb2df 73.08%,
+                      #9788b5 100%
+      );
+      padding: 6px; // толщина рамки
+    }
   }
-  &__caption {
+
+  .works__image-wrapper {
+    display: inline-block;
+    border-radius: 24px;
+    background: transparent; // серая рамка по умолчанию
+    padding: 6px; // толщина обычной рамки
+    transition: background 0.3s ease;
+
+    .works__image-inner {
+      border-radius: 24px; // внутренний контейнер
+      overflow: hidden;
+
+      img.works__image {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .works__caption {
     font-weight: $font-unbounded-regular;
     margin-top: 32px;
     margin-bottom: 42px;
     font-size: 30px;
     line-height: 120%;
-    color: $color-black-purple;
+    color: $color-black-purple; // обычный цвет текста
     text-align: left;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease, background 0.3s ease;
+    background: none; // по умолчанию без градиента
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: currentColor; // обычный цвет текста
+
+
+
     @media (max-width: 992px) {
       font-size: 24px;
     }
   }
 }
-
 
 /*СТРЕЛКИ СЛАЙДЕРА*/
 .swiper-button-next, .swiper-button-prev {
@@ -1838,6 +1883,17 @@ body {
   &__item {
   }
   &__logo {
+  }
+}
+.brands-slider {
+  margin-bottom: 20px;
+
+  .swiper-slide {
+    text-align: center;
+    img {
+      max-width: 140px;
+      height: auto;
+    }
   }
 }
 

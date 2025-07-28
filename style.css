@@ -49,13 +49,13 @@
 }
 .btn-orange:hover {
   border: 1px solid #bdb2d3;
-  background: radial-gradient(163.86% 91.87% at 100% 100%, #beb2df 16.42%, #ff7346 35%, #ff7346 54.58%, #beb2df 73.08%, #9788b5 100%);
+  background: radial-gradient(139.86% 173.87% at 115% 111%, #beb2df 22.42%, #ff7346 35%, #ff7346 42.58%, #beb2df 60.08%, #9788b5 71%);
   box-shadow: 0 12px 12px 0 rgba(151, 136, 181, 0.3);
 }
 .btn-orange:active {
   border: 1px solid #bdb2d3;
   box-shadow: 0 12px 12px 0 rgba(151, 136, 181, 0.3);
-  background: radial-gradient(254.86% 131.2% at 100% 100%, #beb2df 37.02%, #ff7346 85.58%, #beb2df 100%);
+  background: radial-gradient(156.86% 348.87% at 84% 98%, #beb2df 19.42%, #ff7346 46%, #ff7346 12.58%, #beb2df 53.08%, #9788D5 177%);
 }
 .btn-orange:disabled {
   border: 1px solid #817697;
@@ -215,9 +215,11 @@ body {
   height: 100vh;
 }
 
-.dropdown-toggle::after {
-  background: transparent;
-  content: none;
+@media (max-width: 992px) {
+  .dropdown-toggle::after {
+    background: transparent;
+    content: none;
+  }
 }
 
 .navbar-toggler {
@@ -850,7 +852,8 @@ body {
   }
 }
 .sites__cta:hover {
-  filter: brightness(1.2);
+  background: url("img/sites_cta_bg_hover.jpg") no-repeat top center;
+  background-size: cover;
 }
 
 .slider-cards-js-pagination .swiper-pagination-bullet {
@@ -868,7 +871,7 @@ body {
 .workflow {
   font-family: "Unbounded", sans-serif;
   overflow: hidden;
-  padding: 100px 0;
+  padding: 100px 0 120px;
   position: relative;
   z-index: 1;
 }
@@ -891,10 +894,10 @@ body {
 .workflow::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 8%;
   left: 0px;
   right: 0px;
-  bottom: 0;
+  bottom: 8%;
   background: #f3edff;
   filter: blur(100px);
   z-index: -1;
@@ -978,7 +981,7 @@ body {
   }
 }
 .workflow__item:nth-child(2), .workflow__item:nth-child(4) {
-  margin-left: auto;
+  margin-left: 8%;
 }
 .workflow__item:nth-child(1), .workflow__item:nth-child(3) {
   margin-right: auto;
@@ -1055,7 +1058,7 @@ body {
 /*SERVICES*/
 .services {
   font-family: "Unbounded", sans-serif;
-  padding: 0px 0;
+  padding: 86px 0 0;
   background: #fff;
 }
 .services__title {
@@ -1405,21 +1408,41 @@ body {
   position: relative;
 }
 .works__slide {
-  text-align: center;
+  cursor: pointer;
+  text-align: left;
+}
+.works__slide:hover .works__caption {
+  background: radial-gradient(53.86% 158.87% at 112% 100%, rgb(190, 178, 223) 16.41%, rgb(255, 115, 70) 35%, rgb(255, 115, 70) 54.57%, rgb(190, 178, 223) 73.08%, rgb(151, 136, 181) 100%);
+  animation: gradient-text 2s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 @media (max-width: 768px) {
   .works__slide {
     max-width: 310px;
   }
 }
-.works__image {
+.works__slide:hover .works__image-wrapper {
+  background: radial-gradient(163.86% 91.87% at 100% 100%, #beb2df 16.42%, #ff7346 35%, #ff7346 54.58%, #beb2df 73.08%, #9788b5 100%);
+  padding: 6px;
+}
+.works .works__image-wrapper {
+  display: inline-block;
   border-radius: 24px;
+  background: transparent;
+  padding: 6px;
+  transition: background 0.3s ease;
+}
+.works .works__image-wrapper .works__image-inner {
+  border-radius: 24px;
+  overflow: hidden;
+}
+.works .works__image-wrapper .works__image-inner img.works__image {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
-  border: 1px solid #ddd;
 }
-.works__caption {
+.works .works__caption {
   font-weight: 400;
   margin-top: 32px;
   margin-bottom: 42px;
@@ -1427,9 +1450,15 @@ body {
   line-height: 120%;
   color: #42365a;
   text-align: left;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease, background 0.3s ease;
+  background: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: currentColor;
 }
 @media (max-width: 992px) {
-  .works__caption {
+  .works .works__caption {
     font-size: 24px;
   }
 }
@@ -1818,6 +1847,17 @@ body {
     margin-bottom: 66px;
   }
 }
+.brands-slider {
+  margin-bottom: 20px;
+}
+.brands-slider .swiper-slide {
+  text-align: center;
+}
+.brands-slider .swiper-slide img {
+  max-width: 140px;
+  height: auto;
+}
+
 /*TEAM-SLIDER*/
 .team-slider {
   padding: 80px 0 100px;
