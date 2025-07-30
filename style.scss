@@ -126,9 +126,19 @@ body {
   width: 100%;
   z-index: 1000;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  @media (max-width: 1200px) and (min-width: 992px) {
+    justify-content: center;
+    display: flex;
+  }
   &.scrolled {
     background-color: $color-black-purple; // цвет после прокрутки
     padding: 0rem 0;
+  }
+  .container {
+    @media (max-width: 1200px) and (min-width: 992px) {
+      max-width: 100%;
+    }
+
   }
   .navbar-nav {
 
@@ -139,6 +149,20 @@ body {
     margin-right: 32px;
     margin-left: 32px;
     gap: 30px;
+    @media (max-width: 1400px) {
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-right: 0px;
+      margin-left: 0px;
+      gap: 16px;
+    }
+    @media (max-width: 1200px) {
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-right: 10px;
+      margin-left: 10px;
+      gap: 10px;
+    }
     @media (max-width: 992px) {
       margin-top: 50px;
       margin-bottom: 50px;
@@ -211,6 +235,9 @@ body {
     font-size: 14px;
     letter-spacing: 0.08em;
     padding: 0;
+    @media (max-width: 1200px) and (min-width: 992px) {
+      font-size: 12px;
+    }
     @media (max-width: 992px) {
      text-transform: capitalize!important;
       font-size: 33px;
@@ -316,6 +343,14 @@ body {
 }
 .header__contacts {
   gap: 32px;
+  @media (max-width: 1400px) {
+
+    gap: 10px;
+  }
+  @media (max-width: 1200px) {
+
+    gap: 10px;
+  }
   @media (max-width: 992px) {
     margin-left: 80px;
   }
@@ -327,6 +362,9 @@ body {
   font-weight: $font-manrope-semibold;
   color: $color-white;
   font-size: 14px;
+  @media (max-width: 1200px) and (min-width: 992px) {
+    font-size: 12px;
+  }
   @media (max-width: 992px) {
     font-size: 20px;
     line-height: 120%;
@@ -371,6 +409,9 @@ body {
   font-size: 14px;
   text-transform: uppercase;
   padding: 0;
+  @media (max-width: 1200px) and (min-width: 992px) {
+    font-size: 12px;
+  }
   svg {
     margin-right: 6px;
   }
@@ -819,12 +860,16 @@ body {
     padding: 30px;
     text-decoration: none;
     @media (max-width: 992px) {
-      margin-top: 36px;
+      margin-top: 0px;
       padding: 18px 66px;
       flex-direction:row;
-      border-radius: 12px;
+
       background: radial-gradient(96.87% 98.23% at 100% 100%, #beb2df 16.42%, #ff7346 35%, #ff7346 54.58%, #beb2df 73.08%, #42365a 100%);
     }
+    @media (max-width: 768px) {
+      border-radius: 12px;
+    }
+
     img {
       width: 110px;
       height: 110px;
@@ -982,7 +1027,7 @@ body {
     padding: 40px 20px;
     @media (max-width: 992px) {
       padding: 30px 20px 20px;
-      min-height: 340px;
+      min-height: 360px;
       width: 310px!important;
     }
     &:nth-child(2),
@@ -1013,6 +1058,7 @@ body {
     @media (max-width: 992px) {
       width: 87px;
       height: 87px;
+      margin-bottom: 20px;
     }
   }
   &__step-number {
@@ -2366,6 +2412,12 @@ body {
     max-width: 395px;
     height: auto;
     margin-left: -127px;
+    @media (max-width: 1400px) {
+      max-width: 273px;
+    }
+    @media (max-width: 1200px) {
+      max-width: 273px;
+    }
     @media (max-width: 992px) {
       min-height: 195px;
       max-width: 197px;
@@ -2731,6 +2783,9 @@ body {
 /*ARTICLE-SLIDER*/
 .article-slider {
   padding: 80px 0 100px;
+  @media (max-width: 992px) {
+    padding: 0 0 80px;
+  }
 
   &__title-wrapper {
     display: flex;
@@ -2985,6 +3040,8 @@ body {
     @media (max-width: 992px) {
       width: 185px;
       top: -60px;
+      left: 50%;
+      transform: translateX(-50%); /* сдвигаем на половину ширины */
     }
 
   }
