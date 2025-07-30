@@ -250,9 +250,34 @@ body {
   height: 100vh;
 }
 .dropdown-toggle::after {
+  display: inline-block;
+  width: 9px; /* подгони под иконку */
+  height: 9px;
+  margin-left: .5em;
+
+  content: "";
+  background: url("img/custom-icon.svg") no-repeat center 100%;
+  background-size: contain;
+  border: none;
+  transition: transform 0.3s ease, background-image 0.3s ease;
+  transform-origin: center center; /* 🔥 центр для поворота */
   @media (max-width: 992px) {
   background: transparent;
   content: none;}
+}
+
+.header .nav-item .nav-link:hover::after {
+  background-image: url("img/custom-icon-hover.svg"); /* меняем иконку стрелки */
+}
+.dropdown-toggle[aria-expanded="true"]::after {
+  background-image: url("img/custom-icon-orange.svg") no-repeat center 100%;
+  background-size: contain;
+  transform: rotate(180deg);
+}
+.dropdown-toggle::after {
+  position: relative;
+  top: 2px; /* лёгкая коррекция */
+  background-position: center center;
 }
 .navbar-toggler {
   border: none;
@@ -562,6 +587,7 @@ body {
     height: auto;
     margin-left: -100px;
     @media (max-width: 992px) {
+      min-height: 174px;
       max-width: 174px;
       margin: -60px auto;
     }
@@ -676,6 +702,10 @@ body {
   }
 }
 /*SITES*/
+.slider-cards-js .swiper-slide {
+  width: 310px; /* или 310px — подбираешь под дизайн */
+  flex-shrink: 0; /* важно, чтобы слайды не сжимались */
+}
 .sites {
   font-family: $font-unbounded;
 
@@ -712,7 +742,7 @@ body {
     padding: 20px 20px 20px 20px;
     text-align: left;
     height: 100%;
-    min-height: 363px;
+    min-height: 375px;
     /*transition: all 0.3s ease;*/
 /*
     &:hover {
@@ -858,10 +888,12 @@ body {
     height: auto;
     padding-right: 62px;
     @media (max-width: 992px) {
-      max-width: 160px;
+      min-height: 230px;
+      max-width: 230px;
       margin: -85px auto;
       margin-left: 40%;
       padding-right: 0px;
+
     }
 
   }
@@ -956,10 +988,16 @@ body {
     &:nth-child(2),
     &:nth-child(4) {
       margin-left: 8%;
+      @media (max-width: 992px) {
+        margin-left: 0;
+      }
     }
     &:nth-child(1),
     &:nth-child(3) {
       margin-right: auto;
+      @media (max-width: 992px) {
+        margin-right: 0;
+      }
     }
   }
   &__step {
@@ -1032,10 +1070,18 @@ body {
 
 /*SERVICES*/
 
+.services-slider-js .swiper-slide {
+  width: 310px; /* или 310px — подбираешь под дизайн */
+  flex-shrink: 0; /* важно, чтобы слайды не сжимались */
+}
+
 .services {
   font-family: $font-unbounded;
   padding: 86px 0 0;
   background: $color-white;
+  @media (max-width: 992px) {
+    padding:  0;
+  }
 
   &__title {
     position: relative;
@@ -1068,6 +1114,7 @@ body {
     @media (max-width: 768px) {
       min-height: 780px;
       margin-bottom: 24px;
+      width: 310px;
     }
     &-title {
       font-weight:$font-unbounded-medium;
@@ -1307,7 +1354,7 @@ body {
   z-index: 1;
   background: transparent;
   @media (max-width: 992px) {
-    padding: 74px 0 100px;
+    padding: 100px 0 100px;
   }
 
 
@@ -1633,6 +1680,9 @@ body {
     background: radial-gradient(41.86% 150.87% at 104% 96%, #beb2df 26.42%, #ff7346 48%, #ff7346 54.58%, #beb2df 73.08%, #42365a 100%);
     filter: blur(50px);
     z-index: -1;
+    @media(max-width: 992px){
+      background: radial-gradient(105.86% 152.87% at 68% 129%, #beb2df 37.42%, #ff7346 59%, #ff7346 54.58%, #beb2df 73.08%, #42365a 100%);
+    }
   }
 
 
@@ -1817,7 +1867,7 @@ body {
   gap: 60px;
   top: -106px;
   right: 0;
-  @media (max-width: 768px) {
+  @media (max-width:992px) {
     display: none;
   }
 
@@ -1865,7 +1915,10 @@ body {
 
 /*BRANDS*/
 .brands {
-  padding: 139px 0 00px;
+  padding: 139px 0 0;
+  @media (max-width: 992px) {
+    padding: 75px 0 0;
+  }
   &__title {
     font-family: $font-unbounded;
     font-weight: $font-unbounded-medium;
@@ -1956,6 +2009,7 @@ body {
     align-items: stretch; // Выравнивание всех слайдов по высоте
   }
   &__slide {
+
     display: flex!important;            // важно!
     flex-direction: column;   // чтобы контент располагался вертикально
     height: auto!important;
@@ -1965,7 +2019,8 @@ body {
     border-radius: 40px;
     text-align: center;
     @media (max-width: 992px) {
-      width: 310px;
+
+      width: 310px!important;
       margin-bottom: 24px;
     }
 
@@ -2032,7 +2087,7 @@ body {
   gap: 60px;
   top: -110px;
   right: 0;
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     display: none;
   }
 
@@ -2107,6 +2162,7 @@ body {
     text-align: left;
     @media (max-width: 992px) {
       font-size: 33px;
+      width: 100%;
     }
 
   }
@@ -2126,6 +2182,7 @@ body {
     @media (max-width: 992px) {
       font-size: 18px;
       padding: 5px 8px;
+      margin-left: 0;
     }
   }
   &__swiper {
@@ -2144,7 +2201,7 @@ body {
     border-radius: 40px;
     text-align: center;
     @media (max-width: 992px) {
-      width: 310px;
+      width: 310px!important;
       margin-bottom: 24px;
     }
     &:hover{
@@ -2197,7 +2254,7 @@ body {
   gap: 60px;
   top: -110px;
   right: 0;
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     display: none;
   }
 
@@ -2310,6 +2367,7 @@ body {
     height: auto;
     margin-left: -127px;
     @media (max-width: 992px) {
+      min-height: 195px;
       max-width: 197px;
       margin: -60px auto;
       position: relative;
@@ -2521,6 +2579,7 @@ body {
     height: auto;
     padding-left: 65px;
     @media (max-width: 992px) {
+      min-height: 222px;
       padding-left: 0px;
       max-width: 159px;
       margin: -103px auto;
@@ -2604,6 +2663,9 @@ body {
     background-size: contain;
     @media (max-width: 992px) {
       margin-right: auto;
+      width: 32px;
+      height: 32px;
+      margin-bottom: 20px;
     }
 
     &--plus {
@@ -2729,7 +2791,13 @@ body {
     border-radius: 40px;
     text-align: center;
     @media (max-width: 992px) {
-      width: 310px;
+      padding: 30px 20px;
+      width: 310px!important;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 992px) {
+      padding: 30px 20px;
+      width: 310px!important;
       margin-bottom: 24px;
     }
     &:hover{
@@ -2738,7 +2806,8 @@ body {
     img {
       border-radius: 30px;
       max-width: 100%;
-      height: auto;
+      height: 170px;
+
     }
     .article-slider__title {
       text-align: left;
@@ -2801,7 +2870,7 @@ body {
   gap: 60px;
   top: -110px;
   right: 0;
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     display: none;
   }
 

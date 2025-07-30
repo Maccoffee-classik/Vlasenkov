@@ -215,11 +215,39 @@ body {
   height: 100vh;
 }
 
+.dropdown-toggle::after {
+  display: inline-block;
+  width: 9px; /* подгони под иконку */
+  height: 9px;
+  margin-left: 0.5em;
+  content: "";
+  background: url("img/custom-icon.svg") no-repeat center 100%;
+  background-size: contain;
+  border: none;
+  transition: transform 0.3s ease, background-image 0.3s ease;
+  transform-origin: center center; /* 🔥 центр для поворота */
+}
 @media (max-width: 992px) {
   .dropdown-toggle::after {
     background: transparent;
     content: none;
   }
+}
+
+.header .nav-item .nav-link:hover::after {
+  background-image: url("img/custom-icon-hover.svg"); /* меняем иконку стрелки */
+}
+
+.dropdown-toggle[aria-expanded=true]::after {
+  background-image: url("img/custom-icon-orange.svg") no-repeat center 100%;
+  background-size: contain;
+  transform: rotate(180deg);
+}
+
+.dropdown-toggle::after {
+  position: relative;
+  top: 2px; /* лёгкая коррекция */
+  background-position: center center;
 }
 
 .navbar-toggler {
@@ -576,6 +604,7 @@ body {
 }
 @media (max-width: 992px) {
   .benefits__image {
+    min-height: 174px;
     max-width: 174px;
     margin: -60px auto;
   }
@@ -694,6 +723,11 @@ body {
 }
 
 /*SITES*/
+.slider-cards-js .swiper-slide {
+  width: 310px; /* или 310px — подбираешь под дизайн */
+  flex-shrink: 0; /* важно, чтобы слайды не сжимались */
+}
+
 .sites {
   font-family: "Unbounded", sans-serif;
   padding-bottom: 100px;
@@ -733,7 +767,7 @@ body {
   padding: 20px 20px 20px 20px;
   text-align: left;
   height: 100%;
-  min-height: 363px;
+  min-height: 375px;
   /*transition: all 0.3s ease;*/
   /*
       &:hover {
@@ -885,7 +919,8 @@ body {
 }
 @media (max-width: 992px) {
   .workflow__image {
-    max-width: 160px;
+    min-height: 230px;
+    max-width: 230px;
     margin: -85px auto;
     margin-left: 40%;
     padding-right: 0px;
@@ -983,8 +1018,18 @@ body {
 .workflow__item:nth-child(2), .workflow__item:nth-child(4) {
   margin-left: 8%;
 }
+@media (max-width: 992px) {
+  .workflow__item:nth-child(2), .workflow__item:nth-child(4) {
+    margin-left: 0;
+  }
+}
 .workflow__item:nth-child(1), .workflow__item:nth-child(3) {
   margin-right: auto;
+}
+@media (max-width: 992px) {
+  .workflow__item:nth-child(1), .workflow__item:nth-child(3) {
+    margin-right: 0;
+  }
 }
 .workflow__step {
   flex-shrink: 0;
@@ -1056,10 +1101,20 @@ body {
 }
 
 /*SERVICES*/
+.services-slider-js .swiper-slide {
+  width: 310px; /* или 310px — подбираешь под дизайн */
+  flex-shrink: 0; /* важно, чтобы слайды не сжимались */
+}
+
 .services {
   font-family: "Unbounded", sans-serif;
   padding: 86px 0 0;
   background: #fff;
+}
+@media (max-width: 992px) {
+  .services {
+    padding: 0;
+  }
 }
 .services__title {
   position: relative;
@@ -1163,6 +1218,7 @@ body {
   .services__card {
     min-height: 780px;
     margin-bottom: 24px;
+    width: 310px;
   }
 }
 .services__card-title {
@@ -1323,7 +1379,7 @@ body {
 }
 @media (max-width: 992px) {
   .works {
-    padding: 74px 0 100px;
+    padding: 100px 0 100px;
   }
 }
 .works__title {
@@ -1605,6 +1661,11 @@ body {
   filter: blur(50px);
   z-index: -1;
 }
+@media (max-width: 992px) {
+  .review-slider::before {
+    background: radial-gradient(105.86% 152.87% at 68% 129%, #beb2df 37.42%, #ff7346 59%, #ff7346 54.58%, #beb2df 73.08%, #42365a 100%);
+  }
+}
 .review-slider__h2-title {
   font-family: "Unbounded", sans-serif;
   font-weight: 500;
@@ -1792,7 +1853,7 @@ body {
   top: -106px;
   right: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .review-slider__nav {
     display: none;
   }
@@ -1830,7 +1891,12 @@ body {
 
 /*BRANDS*/
 .brands {
-  padding: 139px 0 0px;
+  padding: 139px 0 0;
+}
+@media (max-width: 992px) {
+  .brands {
+    padding: 75px 0 0;
+  }
 }
 .brands__title {
   font-family: "Unbounded", sans-serif;
@@ -1930,7 +1996,7 @@ body {
 }
 @media (max-width: 992px) {
   .team-slider__slide {
-    width: 310px;
+    width: 310px !important;
     margin-bottom: 24px;
   }
 }
@@ -1991,7 +2057,7 @@ body {
   top: -110px;
   right: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .team-slider__nav {
     display: none;
   }
@@ -2059,6 +2125,7 @@ body {
 @media (max-width: 992px) {
   .certificate-slider__h2-title {
     font-size: 33px;
+    width: 100%;
   }
 }
 .certificate-slider__badge {
@@ -2079,6 +2146,7 @@ body {
   .certificate-slider__badge {
     font-size: 18px;
     padding: 5px 8px;
+    margin-left: 0;
   }
 }
 .certificate-slider__swiper {
@@ -2099,7 +2167,7 @@ body {
 }
 @media (max-width: 992px) {
   .certificate-slider__slide {
-    width: 310px;
+    width: 310px !important;
     margin-bottom: 24px;
   }
 }
@@ -2149,7 +2217,7 @@ body {
   top: -110px;
   right: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .certificate-slider__nav {
     display: none;
   }
@@ -2256,6 +2324,7 @@ body {
 }
 @media (max-width: 992px) {
   .calculate-contact-form__image {
+    min-height: 195px;
     max-width: 197px;
     margin: -60px auto;
     position: relative;
@@ -2454,6 +2523,7 @@ body {
 }
 @media (max-width: 992px) {
   .faq__image {
+    min-height: 222px;
     padding-left: 0px;
     max-width: 159px;
     margin: -103px auto;
@@ -2539,6 +2609,9 @@ body {
 @media (max-width: 992px) {
   .faq__icon {
     margin-right: auto;
+    width: 32px;
+    height: 32px;
+    margin-bottom: 20px;
   }
 }
 .faq__icon--plus {
@@ -2665,7 +2738,15 @@ body {
 }
 @media (max-width: 992px) {
   .article-slider__slide {
-    width: 310px;
+    padding: 30px 20px;
+    width: 310px !important;
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 992px) {
+  .article-slider__slide {
+    padding: 30px 20px;
+    width: 310px !important;
     margin-bottom: 24px;
   }
 }
@@ -2675,7 +2756,7 @@ body {
 .article-slider__slide img {
   border-radius: 30px;
   max-width: 100%;
-  height: auto;
+  height: 170px;
 }
 .article-slider__slide .article-slider__title {
   text-align: left;
@@ -2735,7 +2816,7 @@ body {
   top: -110px;
   right: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .article-slider__nav {
     display: none;
   }

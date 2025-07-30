@@ -348,9 +348,9 @@
                     </p>
                 </div>
             </div>
-            <div class="d-none d-lg-block col-lg-1"></div>
+            <div class="d-none d-md-block col-lg-1"></div>
             <!-- Карточка CTA -->
-            <div class="d-none d-lg-block col-md-6 col-lg-5">
+            <div class="d-none d-md-block col-md-6 col-lg-5">
                 <a href="#" class="sites__cta callback-project">
                     <img src="img/icon-site-6.svg" alt="">
                     <span>Обсудить<br>проект</span>
@@ -361,9 +361,9 @@
 
 
     </div>
-        <div class="d-block d-lg-none  slider-cards-js-pagination d-md-none mt-3"></div>
+        <div class="d-block d-md-none  slider-cards-js-pagination d-md-none mt-3"></div>
 
-        <div class="d-block d-lg-none col-12 col-md-6 ">
+        <div class="d-block d-md-none col-12 col-md-6 ">
             <a href="#" class="sites__cta callback-project">
                 <img src="img/icon-site-6.svg" alt="">
                 <span>Обсудить<br>проект</span>
@@ -377,23 +377,38 @@
         <div class="row align-items-center">
             <div class="col-12 col-lg-2 text-center workflow__image-col z-3">
 
-                <img
-                        class="lazy workflow__image  img-fluid floating"
-                        alt="3D объект — flag"
-                        src="img/flag-320.png"
-                        data-src="img/flag-1024.png"
-                        data-srcset="
-    img/flag-320.png 320w,
-    img/flag-640.png 640w,
-    img/flag-1024.png 1024w,
-    img/flag-1440.png 1440w
-  "
-                        data-sizes="(max-width: 576px) 320px,
-              (max-width: 768px) 640px,
-              (max-width: 1200px) 1024px,
-              1440px"
-                        loading="lazy"
-                />
+                <picture>
+                    <!-- Версия для экранов до 992px -->
+                    <source
+                            media="(max-width: 992px)"
+                            data-srcset="img/flag-640.png"
+                    >
+
+                    <!-- Версия для экранов больше 992px -->
+                    <source
+                            media="(min-width: 993px)"
+                            data-srcset="
+      img/flag-320.png 320w,
+      img/flag-640.png 640w,
+      img/flag-1024.png 1024w,
+      img/flag-1440.png 1440w
+    "
+                            data-sizes="(max-width: 576px) 320px,
+                (max-width: 768px) 640px,
+                (max-width: 1200px) 1024px,
+                1440px"
+                    >
+
+                    <!-- Базовый <img> для lazy load -->
+                    <img
+                            class="lazy workflow__image img-fluid floating"
+                            src="img/flag-320.png"
+                            data-src="img/flag-1024.png"
+                            alt="3D объект — flag"
+                            loading="lazy"
+                    />
+                </picture>
+
             </div>
 
             <div class="col-12 col-lg-10">
@@ -835,7 +850,7 @@
 <section class="review-slider">
     <div class="container overflow-hidden pt-0 pt-lg-2">
 
-            <h2 class="review-slider__h2-title">Отзывы клиентов</h2>
+            <h2 class="review-slider__h2-title">Отзывы <br class="d-block d-lg-none ">клиентов</h2>
 
 
         <!-- Swiper container -->
@@ -1279,8 +1294,8 @@
 
 <section class="certificate-slider">
     <div class="container overflow-hidden pt-0 pt-lg-2 ">
-        <div class="certificate-slider__title-wrapper">
-            <h2 class="certificate-slider__h2-title">Сертифкаты</h2>
+        <div class="certificate-slider__title-wrapper flex-wrap flex-lg-nowrap">
+            <h2 class="certificate-slider__h2-title ">Сертифкаты</h2><br class="d-block d-lg-none ">
             <span class="certificate-slider__badge ">22</span>
         </div>
         <!-- Swiper container -->
@@ -1902,8 +1917,9 @@
             container.classList.add('swiper');
 
             mobileSwiper = new Swiper('.slider-cards-js', {
-                slidesPerView: 1,
-                spaceBetween: 20,
+                spaceBetween: 10,
+                slidesPerView: 'auto',
+                centeredSlides: false,
                 pagination: {
                     el: '.slider-cards-js-pagination',
                     clickable: true,
@@ -1998,8 +2014,9 @@
             container.classList.add('swiper');
 
             servicesSwiper = new Swiper('.services-slider-js', {
-                slidesPerView: 1,
-                spaceBetween: 20,
+                spaceBetween: 10,
+                slidesPerView: 'auto',
+                centeredSlides: false,
                 pagination: {
                     el: '.services-slider-pagination',
                     clickable: true,
@@ -2028,34 +2045,37 @@
 
             // Инициализируем Swiper для каждого слайдера вкладки
     const swiperDev = new Swiper('#dev .swiper', {
-        loop: true,
+        slidesPerView: 'auto', // мобильный: авто ширина для наползания
+        centeredSlides: false,
+        spaceBetween: 8,
+        loop: false, // мобилка без loop
         autoplay: {
-            delay: 100000, // 3000 мс = 3 секунды между слайдами
+            delay: 3000, // 3000 мс = 3 секунды между слайдами
             disableOnInteraction: false, // не останавливать при ручной прокрутке
         },
         pagination: {
             el: '#dev .swiper-pagination',
             clickable: true,
         },
-        centeredSlides: true,
-        slidesPerView: 'auto',      // мобильно: 1 слайд
-        spaceBetween: 10,
-        // отступ между слайдами (пример: 16px на мобиле)
+
         navigation: {
             nextEl: '.works__slider-next',
             prevEl: '.works__slider-prev',
         },
         breakpoints: {
             768: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+            },
+            992: {
                 centeredSlides: false,   //  на десктопе уже не надо центрировать
                 slidesPerView: 2,
-                spaceBetween: 24,
+
                 pagination: {
                     el: '#dev .swiper-pagination',
                     clickable: false,
                 },
-                slidesPerView: 2,   // ≥768px: 2 слайда
-                spaceBetween: 24
+
             },
             1200: {
                 slidesPerView: 3,   // ≥1200px: 3 слайда
@@ -2066,32 +2086,37 @@
     });
     // Аналогично можно проинициализировать swiperAds и swiperPromote для других вкладок
    const swiperAds = new Swiper('#ads .swiper', {
-        loop: true,
+       slidesPerView: 'auto', // мобильный: авто ширина для наползания
+       centeredSlides: false,
+       spaceBetween: 8,
+       loop: false, // мобилка без loop
        autoplay: {
-           delay: 100000, // 3000 мс = 3 секунды между слайдами
+           delay: 3000, // 3000 мс = 3 секунды между слайдами
            disableOnInteraction: false, // не останавливать при ручной прокрутке
        },
         pagination: {
             el: '#ads .swiper-pagination',
             clickable: true,
         },
-        slidesPerView: 1,
-        spaceBetween: 16,
+
         navigation: {
             nextEl: '.works__slider-next',
             prevEl: '.works__slider-prev',
         },
         breakpoints: {
             768: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+            },
+            992: {
                 centeredSlides: false,   //  на десктопе уже не надо центрировать
                 slidesPerView: 2,
-                spaceBetween: 24,
+
                 pagination: {
                     el: '#ads .swiper-pagination',
                     clickable: false,
                 },
-                slidesPerView: 2,
-                spaceBetween: 24
+
             },
             1200: {
                 slidesPerView: 3,
@@ -2101,33 +2126,40 @@
     });
     // Аналогично можно проинициализировать swiperAds и swiperPromote для других вкладок
     const swiperPromote = new Swiper('#promote .swiper', {
-        loop: true,
+        slidesPerView: 'auto', // мобильный: авто ширина для наползания
+        centeredSlides: false,
+        spaceBetween: 8,
+        loop: false, // мобилка без loop
         autoplay: {
-            delay: 100000, // 3000 мс = 3 секунды между слайдами
+            delay: 3000, // 3000 мс = 3 секунды между слайдами
             disableOnInteraction: false, // не останавливать при ручной прокрутке
         },
         pagination: {
             el: '#promote .swiper-pagination',
             clickable: true,
         },
-        slidesPerView: 1,
-        spaceBetween: 16,
+
         navigation: {
             nextEl: '.works__slider-next',
             prevEl: '.works__slider-prev',
         },
         breakpoints: {
             768: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+            },
+            992: {
+
 
                 centeredSlides: false,   //  на десктопе уже не надо центрировать
                 slidesPerView: 2,
-                spaceBetween: 24,
+
+
                 pagination: {
                     el: '#promote .swiper-pagination',
                     clickable: false,
                 },
-                slidesPerView: 2,
-                spaceBetween: 24
+
             },
             1200: {
                 slidesPerView: 3,
@@ -2140,18 +2172,34 @@
 
     /*REVIEW-SLIDER**/
     const reviewSwiper = new Swiper('.review-slider__swiper', {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 20,
+        slidesPerView: 'auto', // мобильный: авто ширина для наползания
+        centeredSlides: false,
+        spaceBetween: 16,
+        loop: false, // мобилка без loop
+        autoplay: {
+            delay: 3000, // 3000 мс = 3 секунды между слайдами
+            disableOnInteraction: false, // не останавливать при ручной прокрутке
+        },
 
 
 
         breakpoints: {
             768: {
-                slidesPerView: 2
+                spaceBetween: 20,
+
+            },
+            992: {
+                spaceBetween: 20,
+
+                slidesPerView: 2,      // два слайда в ряд, без наползания
+                centeredSlides: false,
+                loop: true             // loop включаем
             },
             1200: {
-                slidesPerView: 2
+                spaceBetween: 20,
+                slidesPerView: 2,
+                centeredSlides: false,
+                loop: true
             }
         },
         navigation: {
@@ -2170,17 +2218,31 @@
     /*TEAM-SLIDER**/
     const teamSwiper = new Swiper('.team-slider__swiper', {
         loop: true,
-        slidesPerView: 1,
-        spaceBetween: 20,
 
+        spaceBetween: 16,
+        slidesPerView: 'auto',
+        centeredSlides: false, // прижатие к левому краю
+        autoplay: {
+            delay: 3000, // 3000 мс = 3 секунды между слайдами
+            disableOnInteraction: false, // не останавливать при ручной прокрутке
+        },
 
 
         breakpoints: {
             768: {
-                slidesPerView: 2
+                spaceBetween: 20,
+
+            },
+            992: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+                centeredSlides: false, // на планшете и выше центр не нужен
+                loop: true // тут можно включать loop
             },
             1200: {
-                slidesPerView: 4
+                slidesPerView: 4,
+                centeredSlides: false,
+                loop: true
             }
         },
         navigation: {
@@ -2198,21 +2260,33 @@
 
     /*CERTIFICATE-SLIDER**/
     const certificateSwiper = new Swiper('.certificate-slider__swiper', {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 40,
+
+        slidesPerView: 'auto', // мобильный: авто ширина для наползания
+        centeredSlides: false,
+        spaceBetween: 16,
+        loop: false, // моби
         autoplay: {
-            delay: 100000, // 3000 мс = 3 секунды между слайдами
+            delay: 3000, // 3000 мс = 3 секунды между слайдами
             disableOnInteraction: false, // не останавливать при ручной прокрутке
         },
 
 
         breakpoints: {
             768: {
-                slidesPerView: 2
+                spaceBetween: 20,
+
+            },
+            992: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+                centeredSlides: false,
+                loop: true // включаем loop на планшете
             },
             1200: {
-                slidesPerView: 3
+                spaceBetween: 20,
+                slidesPerView: 3,
+                centeredSlides: false,
+                loop: true
             }
         },
         navigation: {
@@ -2228,21 +2302,32 @@
 
     /*ARTICLE-SLIDER**/
     const articleSwiper = new Swiper('.article-slider__swiper', {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 40,
+        slidesPerView: 'auto', // автоматическая ширина из CSS
+        centeredSlides: false, // прижатие к левому краю
+        spaceBetween: 16,
+        loop: false, // на мобилке лучше без loop для эффекта наползания
         autoplay: {
-            delay: 5000, // 3000 мс = 3 секунды между слайдами
+            delay: 3000, // 3000 мс = 3 секунды между слайдами
             disableOnInteraction: false, // не останавливать при ручной прокрутке
         },
 
 
         breakpoints: {
             768: {
-                slidesPerView: 2
+                spaceBetween: 20,
+
+            },
+            992: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+                centeredSlides: false,
+                loop: true // включаем loop на планшете
             },
             1200: {
-                slidesPerView: 3
+                spaceBetween: 20,
+                slidesPerView: 3,
+                centeredSlides: false,
+                loop: true
             }
         },
         navigation: {
