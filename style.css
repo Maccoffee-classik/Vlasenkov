@@ -123,8 +123,8 @@ body {
   .header .navbar-nav {
     padding-left: 16px;
     padding-right: 16px;
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
     gap: 16px;
   }
 }
